@@ -13,6 +13,7 @@
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
+#include "Contact.hpp"
 #include <iostream>
 
 
@@ -25,13 +26,10 @@ public:
 
 		void	add(void);
 		void	search(void);
-		void	exit(void);
-
-
 
 private:
 
-	int tab[7];
+	Contact	_contact[8];
 
 };
 

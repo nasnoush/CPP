@@ -41,25 +41,20 @@
 int main (void)
 {
 
-	PhoneBook phone;
+	PhoneBook repertoire;
 	Contact	contact;
-
 
 	std::string input;
 
-	std::cin >> input;
 
-	if (input == "ADD")
-		std::cout << "j ajoute" << std::endl;
-	else if (input == "SEARCH")
-		std::cout << "je cherche" << std::endl;
-	else if (input == "EXIT")
-		std::cout << "je quitte" << std::endl;
-	else
-		std::cout << "je fais rien" << std::endl;
+	while (input != "EXIT")
+	{
+		std::cin >> input;
 
-	phone.add();
-	
-
+		if (input == "ADD")
+			repertoire.add();
+		else if (input == "SEARCH")
+			std::cout << "je cherche" << std::endl;
+	}
 	return (0);
 }

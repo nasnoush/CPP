@@ -25,7 +25,7 @@ PhoneBook::~PhoneBook(void) {
 }
 
 
-void	PhoneBook::add(void) {
+void	PhoneBook::add() {
 
 	std::string fn, ln, nn, pn, scrt;
 
@@ -40,4 +40,6 @@ void	PhoneBook::add(void) {
 	std::cin >> pn;
 	std::cout << "Darkest secret : ";
 	std::cin >> scrt;
+
+	std::cout << "Contact crée." << std::endl;
 }
