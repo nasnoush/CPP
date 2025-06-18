@@ -13,7 +13,7 @@
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
-#include "Contact.hpp"
+#include "../include/Contact.hpp"
 #include <iostream>
 
 
@@ -27,9 +27,12 @@ public:
 		void	add(void);
 		void	search(void);
 
+		int 	_i;
+
 private:
 
 	Contact	_contact[8];
+	int 	_num_contact;
 
 };
 

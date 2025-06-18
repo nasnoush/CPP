@@ -46,15 +46,26 @@ int main (void)
 
 	std::string input;
 
+	repertoire._i = 0;
+
+	contact.setnum_contact(5);
+
+	std::cout << "numero choisi : " << contact.getnum_contact() << std::endl;
 
 	while (input != "EXIT")
 	{
 		std::cin >> input;
 
 		if (input == "ADD")
+		{	
 			repertoire.add();
+			repertoire._i++;
+
+			if (repertoire._i == 8)
+				repertoire._i = 0;
+		}
 		else if (input == "SEARCH")
-			std::cout << "je cherche" << std::endl;
+			repertoire.search();
 	}
 	return (0);
 }
