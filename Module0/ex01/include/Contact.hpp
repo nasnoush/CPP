@@ -15,6 +15,7 @@
 
 
 #include <iostream>
+#include <iomanip>
 
 class	Contact {
 
@@ -30,7 +31,6 @@ public:
 	void setSecret(std::string value); 
 
 	void setnum_contact(int n);
-	int	getnum_contact();
 
 	std::string	getFirstName();
 	std::string	getLastName();
@@ -38,6 +38,9 @@ public:
 	std::string	getPhoneNumber();
 	std::string	getSecret();
 
+	int	getnum_contact();
+
+	int 	_num_contact;
 
 	
 

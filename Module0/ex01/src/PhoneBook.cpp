@@ -42,7 +42,7 @@ void	PhoneBook::add() {
 	_contact[_i].setNickName(nn);
 	std::cout << "Phone Number : ";
 	std::cin >> pn;
-	_contact[_i].setPhoneNumber(ln);
+	_contact[_i].setPhoneNumber(pn);
 	std::cout << "Darkest secret : ";
 	std::cin >> scrt;
 	_contact[_i].setSecret(scrt);
@@ -54,17 +54,56 @@ void	PhoneBook::add() {
 void	PhoneBook::search(void)
 {
 	std::string	num;
+	int index = 0;
 
 	// Afficher les contacts comme demandé
-	// Liste de 4 colonnes separé par des pipes et 10 char max
+	// Liste de 4 colonnes separées par des pipes et 10 char max
 
-	std::cout << ;
+	std::cout << "| " << std::setw(10) << std::left << "Index";  
+	std::cout << "|" << std::setw(10) << std::left << "First Name";
+	std::cout << "|" << std::setw(10) << std::left << "Last Name";
+	std::cout << "|" << std::setw(10) << std::left << "Nick Name" << std::endl;  
+
+    
+
+	while (index < _i)
+	{
+		_tmpfn = _contact[index].getFirstName();
+		_tmpln = _contact[index].getLastName();
+		_tmpnn = _contact[index].getNickName();
+
+		if (_tmpfn.size() > 10)
+		{
+			_tmpfn.resize(10);
+			_tmpfn.replace(9, 1, ".");
+		}
+		if (_tmpln.size() > 10)
+		{
+			_tmpln.resize(10);
+			_tmpln.replace(9, 1, ".");
+		}
+		if (_tmpnn.size() > 10)
+		{
+			_tmpnn.resize(10);
+			_tmpnn.replace(9, 1, ".");
+		}
+
+
+		std::cout << "| " << std::setw(10) << std::left << index;  
+		std::cout << "|" << std::setw(10) << std::left << _tmpfn;
+		std::cout << "|" << std::setw(10) << std::left << _tmpln;
+		std::cout << "|" << std::setw(10) << std::left << _tmpnn << std::endl; 
+
+		index++;
+	}
+
+
+
 
 
 
 	// Demander de choisir un contact et l'afficher
-
-	std::cout << "Choix du contact : ";
+	std::cout << "Choix de Contact : ";
 	std::cin >> num;
 	int i = std::stoi(num);
 

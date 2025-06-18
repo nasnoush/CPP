@@ -48,9 +48,9 @@ int main (void)
 
 	repertoire._i = 0;
 
-	contact.setnum_contact(5);
+	// contact.setnum_contact(5);
 
-	std::cout << "numero choisi : " << contact.getnum_contact() << std::endl;
+	// std::cout << "numero choisi : " << contact.getnum_contact() << std::endl;
 
 	while (input != "EXIT")
 	{

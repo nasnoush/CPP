@@ -15,6 +15,7 @@
 
 #include "../include/Contact.hpp"
 #include <iostream>
+#include <iomanip>
 
 
 class	PhoneBook {
@@ -33,6 +34,8 @@ private:
 
 	Contact	_contact[8];
 	int 	_num_contact;
+	int 	_count;
+	std::string _tmpfn, _tmpln, _tmpnn;
 
 };
 
