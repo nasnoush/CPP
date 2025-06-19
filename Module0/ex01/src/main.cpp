@@ -17,27 +17,6 @@
 
 
 
-
-
-
-// int main (void)
-// {
-// 	std::string input;
-
-// 	std::cin >> input;
-
-// 	if (input == "ADD")
-// 		PhoneBook::add(void);
-// 	else if (input == "SEARCH")
-// 		PhoneBook::search(void);
-// 	else if (input == "EXIT")
-// 		PhoneBook::exit(void);
-// 	else
-// 		// a voir
-
-// 	return (0);
-// }
-
 int main (void)
 {
 
@@ -46,7 +25,7 @@ int main (void)
 
 	std::string input;
 
-
+	std::cout << "Entrez : ADD , SEARCH ou EXIT" << std::endl;
 	while (input != "EXIT")
 	{
 		std::cin >> input;

@@ -27,7 +27,7 @@ public:
 
 		void	add(void);
 		void	search(void);
-		// int PhoneBook::check(const std::string& str);
+		int check(const std::string& str);
 
 
 private:

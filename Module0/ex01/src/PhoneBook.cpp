@@ -28,34 +28,44 @@ PhoneBook::~PhoneBook(void) {
 	return ;
 }
 
-// int PhoneBook::check(const std::string& str)
-// {
-// 	if (str.empty()) {
-// 		std::cout << "Le champ ne doit pas être vide !" << std::endl;
-// 		return 0;
-// 	}
-// 	return 1;
-// }
+int PhoneBook::check(const std::string& str)
+{
+	if (str.empty()) {
+		std::cout << "Le champ ne doit pas être vide !" << std::endl;
+		return 0;
+	}
+	return 1;
+}
 
 
 void	PhoneBook::add() {
 
 	std::string fn, ln, nn, pn, scrt;
+	std::cin.ignore();
 
 	std::cout << "First Name : ";
-	std::cin >> fn;
+	std::getline(std::cin, fn);
+	if (!check(fn)) return;
 	_contact[_i].setFirstName(fn);
+
 	std::cout << "Last Name : ";
-	std::cin >> ln;
+	std::getline(std::cin, ln);
+	if (!check(ln)) return;
 	_contact[_i].setLastName(ln);
+
 	std::cout << "Nick Name : ";
-	std::cin >> nn;
+	std::getline(std::cin, nn);
+	if (!check(nn)) return;
 	_contact[_i].setNickName(nn);
+
 	std::cout << "Phone Number : ";
-	std::cin >> pn;
+	std::getline(std::cin, pn);
+	if (!check(pn)) return;
 	_contact[_i].setPhoneNumber(pn);
+
 	std::cout << "Darkest secret : ";
-	std::cin >> scrt;
+	std::getline(std::cin, scrt);
+	if (!check(scrt)) return;
 	_contact[_i].setSecret(scrt);
 
 
@@ -74,10 +84,10 @@ void	PhoneBook::search(void)
 	// Afficher les contacts comme demandé
 	// Liste de 4 colonnes separées par des pipes et 10 char max
 
-	std::cout << "| " << std::setw(10) << std::left << "Index";  
-	std::cout << "|" << std::setw(10) << std::left << "First Name";
-	std::cout << "|" << std::setw(10) << std::left << "Last Name";
-	std::cout << "|" << std::setw(10) << std::left << "Nick Name" << std::endl;  
+	std::cout << "|" << std::setw(10) << std::right << "Index";  
+	std::cout << "|" << std::setw(10) << std::right << "First Name";
+	std::cout << "|" << std::setw(10) << std::right << "Last Name";
+	std::cout << "|" << std::setw(10) << std::right << "Nick Name" << std::endl;  
 
     
 
@@ -104,10 +114,10 @@ void	PhoneBook::search(void)
 		}
 
 
-		std::cout << "| " << std::setw(10) << std::left << index;  
-		std::cout << "|" << std::setw(10) << std::left << _tmpfn;
-		std::cout << "|" << std::setw(10) << std::left << _tmpln;
-		std::cout << "|" << std::setw(10) << std::left << _tmpnn << std::endl; 
+		std::cout << "|" << std::setw(10) << std::right << index;  
+		std::cout << "|" << std::setw(10) << std::right << _tmpfn;
+		std::cout << "|" << std::setw(10) << std::right << _tmpln;
+		std::cout << "|" << std::setw(10) << std::right << _tmpnn << std::endl; 
 
 		index++;
 	}
