@@ -27,15 +27,16 @@ public:
 
 		void	add(void);
 		void	search(void);
+		// int PhoneBook::check(const std::string& str);
 
-		int 	_i;
-		int 	_count;
 
 private:
 
 	Contact	_contact[8];
 	int 	_num_contact;
 	std::string _tmpfn, _tmpln, _tmpnn;
+	int 	_i;
+	int 	_count;
 
 };
 

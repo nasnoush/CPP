@@ -17,6 +17,8 @@
 PhoneBook::PhoneBook(void) {
 
 	std::cout << "Constructeur phone " << std::endl;
+	_i = 0;
+	_count = 0;
 	return ;
 }
 
@@ -25,6 +27,15 @@ PhoneBook::~PhoneBook(void) {
 	std::cout << "destructeur phone " << std::endl;
 	return ;
 }
+
+// int PhoneBook::check(const std::string& str)
+// {
+// 	if (str.empty()) {
+// 		std::cout << "Le champ ne doit pas être vide !" << std::endl;
+// 		return 0;
+// 	}
+// 	return 1;
+// }
 
 
 void	PhoneBook::add() {
@@ -50,7 +61,9 @@ void	PhoneBook::add() {
 
 	std::cout << "Contact numéro " << _i << " crée." << std::endl;
 
-	
+	_i = (_i + 1) % 8;
+	if (_count < 8)
+		_count++;
 }
 
 void	PhoneBook::search(void)
