@@ -49,6 +49,8 @@ void	PhoneBook::add() {
 
 
 	std::cout << "Contact numéro " << _i << " crée." << std::endl;
+
+	
 }
 
 void	PhoneBook::search(void)
@@ -66,7 +68,7 @@ void	PhoneBook::search(void)
 
     
 
-	while (index < _i)
+	while (index < _count)
 	{
 		_tmpfn = _contact[index].getFirstName();
 		_tmpln = _contact[index].getLastName();
@@ -105,7 +107,23 @@ void	PhoneBook::search(void)
 	// Demander de choisir un contact et l'afficher
 	std::cout << "Choix de Contact : ";
 	std::cin >> num;
+
+	for (size_t d = 0; d < num.size(); d++)
+	{
+		if (!isdigit(num[d]))
+		{
+			std::cout << "Veuillez entrée un numero !" << std::endl;
+			return ;
+		}
+	}
+
 	int i = std::stoi(num);
+
+	if (i < 0 || i >= _count)
+	{	
+		std::cout << "Veuillez choisir un numéro valide !" << std::endl;
+		return ;
+	}
 
 	std::cout << "Contact n° [" << num << "] :" << std::endl;
 

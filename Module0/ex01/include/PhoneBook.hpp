@@ -29,12 +29,12 @@ public:
 		void	search(void);
 
 		int 	_i;
+		int 	_count;
 
 private:
 
 	Contact	_contact[8];
 	int 	_num_contact;
-	int 	_count;
 	std::string _tmpfn, _tmpln, _tmpnn;
 
 };

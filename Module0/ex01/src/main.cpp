@@ -47,6 +47,7 @@ int main (void)
 	std::string input;
 
 	repertoire._i = 0;
+	repertoire._count = 0;
 
 	// contact.setnum_contact(5);
 
@@ -59,8 +60,11 @@ int main (void)
 		if (input == "ADD")
 		{	
 			repertoire.add();
-			repertoire._i++;
 
+			if (repertoire._count < 8)
+       			repertoire._count++;
+
+			repertoire._i++;
 			if (repertoire._i == 8)
 				repertoire._i = 0;
 		}
