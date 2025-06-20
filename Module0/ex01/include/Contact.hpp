@@ -40,13 +40,13 @@ public:
 
 	int	getnum_contact();
 
-	int 	_num_contact;
 
 	
 
 private:
 
 	std::string _FirstName, _LastName, _NickName, _PhoneNumber, _Secret;
+	int 	_num_contact;
 };
 
 #endif
