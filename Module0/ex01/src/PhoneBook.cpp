@@ -136,12 +136,13 @@ void	PhoneBook::search(void)
 		}
 	}
 
-	int i = std::stoi(num);
-
-	if (i < 0 || i >= _count)
-	{	
+	std::istringstream iss(num);
+	
+	int i;
+	if (!(iss >> i) || i < 0 || i >= _count) 
+	{
 		std::cout << "Veuillez choisir un numéro valide !" << std::endl;
-		return ;
+		return;
 	}
 
 	std::cout << "Contact n° [" << num << "] :" << std::endl;

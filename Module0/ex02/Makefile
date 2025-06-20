@@ -1,8 +1,11 @@
-NAME = ex00
+NAME = ex02
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp
+SRCS = 	src/main.cpp \
+		src/Contact.cpp \
+		src/PhoneBook.cpp
+
 OBJ = $(SRCS:.cpp=.o)
 
 all: $(NAME)
