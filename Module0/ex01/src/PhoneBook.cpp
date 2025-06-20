@@ -16,16 +16,12 @@
 
 PhoneBook::PhoneBook(void) {
 
-	std::cout << "Constructeur phone " << std::endl;
 	_i = 0;
 	_count = 0;
-	return ;
 }
 
 PhoneBook::~PhoneBook(void) {
 
-	std::cout << "destructeur phone " << std::endl;
-	return ;
 }
 
 int PhoneBook::check(const std::string& str)

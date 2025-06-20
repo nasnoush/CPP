@@ -14,14 +14,10 @@
 
 Contact::Contact(void) {
 
-	std::cout << "Constructeur contact " << std::endl;
-	return ;
 }
 
 Contact::~Contact(void) {
 
-	std::cout << "destructeur contact " << std::endl;
-	return ;
 }
 
 void Contact::setFirstName(std::string value) 
