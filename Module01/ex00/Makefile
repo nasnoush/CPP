@@ -1,9 +1,12 @@
-NAME = ex02
+NAME = ex00
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = 	src/main.cpp \
-
+SRCS =  src/main.cpp \
+		src/Zombie.cpp \
+		src/newZombie.cpp \
+		src/randomChump.cpp
+		
 OBJ = $(SRCS:.cpp=.o)
 
 all: $(NAME)
