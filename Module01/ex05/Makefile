@@ -1,9 +1,9 @@
-NAME = ex04
+NAME = ex05
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS =  src/main.cpp \
-		src/replace.cpp
+		src/Harl.cpp
 		
 OBJ = $(SRCS:.cpp=.o)
 

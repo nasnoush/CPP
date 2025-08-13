@@ -15,14 +15,8 @@
 
 #include <iostream>
 #include <fstream>
+#include <string>
 
-class replace {
-
-	public :
-
-	private :
-
-};
-
+std::string	replace_str(std::string &str_origin, std::string s1, std::string s2);
 
 #endif
