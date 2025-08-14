@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/13 14:33:26 by nas               #+#    #+#             */
-/*   Updated: 2025/08/14 17:00:11 by nas              ###   ########.fr       */
+/*   Created: 2025/08/14 16:08:07 by nas               #+#    #+#             */
+/*   Updated: 2025/08/14 17:22:14 by nas              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,22 +24,22 @@ Harl::~Harl(void)
 
 void    Harl::debug()
 {
-    std::cout << "DEBUG : I love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup burger. I really do!" << std::endl;
+    std::cout << "[DEBUG] : I love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup burger. I really do!" << std::endl;
 }
 
 void    Harl::info()
 {
-    std::cout << "INFO : I cannot believe adding extra bacon costs more money. You didn’t put enough bacon in my burger! If you did, I wouldn’t be asking for more!" << std::endl;
+    std::cout << "[INFO] : I cannot believe adding extra bacon costs more money. You didn’t put enough bacon in my burger! If you did, I wouldn’t be asking for more!" << std::endl;
 }
 
 void    Harl::warning()
 {
-    std::cout << "WARNING : I think I deserve to have some extra bacon for free. I’ve been coming for years, whereas you started working here just last month." << std::endl;
+    std::cout << "[WARNING] : I think I deserve to have some extra bacon for free. I’ve been coming for years, whereas you started working here just last month." << std::endl;
 }
 
 void    Harl::error()
 {
-    std::cout << "ERROR : This is unacceptable! I want to speak to the manager now." << std::endl;
+    std::cout << "[ERROR] : This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
 const std::string Harl::levels[4] = 
@@ -56,13 +56,34 @@ const   Harl::f Harl::action[4] =
 };
 
 void    Harl::complain(std::string level)
-{
+{        
+    
+    int pos = -1;
+    
     for (int i = 0; i < 4; i++)
     {
         if (level == levels[i])
         {
-            (this->*action[i])();
-            return;
+            pos = i;
+            break;
         }
+    }
+    
+    if (pos == -1)
+    {
+        std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+        return ;
+    }
+
+    switch (pos)
+    {
+        case 0:
+            this->debug(); 
+        case 1:
+            this->info();
+        case 2:
+            this->warning();
+        case 3:
+            this->error();
     }
 }

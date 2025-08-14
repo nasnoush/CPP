@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/13 14:33:28 by nas               #+#    #+#             */
-/*   Updated: 2025/08/14 15:52:53 by nas              ###   ########.fr       */
+/*   Created: 2025/08/14 16:08:09 by nas               #+#    #+#             */
+/*   Updated: 2025/08/14 16:45:36 by nas              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/Harl.hpp"
 
-int main (int ac, char **av)
+int main(int ac, char **av)
 {
     if (ac != 2)
     {
@@ -20,6 +20,6 @@ int main (int ac, char **av)
         return (1);
     }
     
-    Harl I;
-    I.complain(av[1]);
+    Harl H;
+    H.complain(av[1]);
 }
