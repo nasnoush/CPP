@@ -4,6 +4,7 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS =  src/main.cpp \
 		src/ClapTrap.cpp \
+		src/ScavTrap.cpp
 		
 OBJ = $(SRCS:.cpp=.o)
 
