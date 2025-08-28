@@ -1,43 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/26 12:43:44 by nas               #+#    #+#             */
-/*   Updated: 2025/08/26 13:56:17 by nas              ###   ########.fr       */
+/*   Created: 2025/08/28 12:53:53 by nas               #+#    #+#             */
+/*   Updated: 2025/08/28 13:29:17 by nas              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Cat.hpp"
+#include "../include/Brain.hpp"
 
-Cat::Cat()
+Brain::Brain()
 {
-    _type = "Cat";
-    std::cout << "Cat's constructor called" << std::endl;
+    std::cout << "Brain's constructor called" << std::endl;
 }
 
-Cat::Cat(const Cat &other) : Animal(other)
+Brain::Brain(const Brain &other)
 {
-    _type = other._type;
+    for (int i = 0; i < 100; i++)
+        ideas[i] = other.ideas[i];
 }
 
-Cat& Cat::operator=(const Cat &other)
+Brain& Brain::operator=(const Brain &other)
 {
     if (this != &other)
-        _type = other._type;
-    
+    {
+        for (int i = 0; i < 100; ++i)
+            ideas[i] = other.ideas[i];
+    }
     return *this;
 }
 
-Cat::~Cat()
+Brain::~Brain()
 {
-    std::cout << "Cat's deconstructor called" << std::endl;
+    std::cout << "Brain's destructeurr called" << std::endl;
 }
-
-void    Cat::makeSound() const
-{
-    std::cout << "Miaaaouuu.." << std::endl;
-}
-

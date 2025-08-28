@@ -6,7 +6,7 @@
 /*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 12:43:47 by nas               #+#    #+#             */
-/*   Updated: 2025/08/26 13:43:44 by nas              ###   ########.fr       */
+/*   Updated: 2025/08/26 13:56:22 by nas              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Dog::Dog()
     std::cout << "Dog's constructor called" << std::endl;
 }
 
-Dog::Dog(const Dog &other)
+Dog::Dog(const Dog &other) : Animal(other)
 {
     _type = other._type;
 }

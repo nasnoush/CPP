@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/26 12:43:44 by nas               #+#    #+#             */
-/*   Updated: 2025/08/26 13:56:17 by nas              ###   ########.fr       */
+/*   Created: 2025/08/26 12:44:08 by nas               #+#    #+#             */
+/*   Updated: 2025/08/26 13:19:34 by nas              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Cat.hpp"
+#include "../include/Animal.hpp"
 
-Cat::Cat()
+Animal::Animal()
 {
-    _type = "Cat";
-    std::cout << "Cat's constructor called" << std::endl;
+    std::cout << "Animal's constructor called" << std::endl;
+    _type = "";
 }
 
-Cat::Cat(const Cat &other) : Animal(other)
+Animal::Animal(const Animal &other)
 {
     _type = other._type;
 }
 
-Cat& Cat::operator=(const Cat &other)
+Animal& Animal::operator=(const Animal &other)
 {
     if (this != &other)
         _type = other._type;
@@ -31,13 +31,17 @@ Cat& Cat::operator=(const Cat &other)
     return *this;
 }
 
-Cat::~Cat()
+Animal::~Animal()
 {
-    std::cout << "Cat's deconstructor called" << std::endl;
+    std::cout << "Animal's destructor called" << std::endl;
 }
 
-void    Cat::makeSound() const
+std::string    Animal::getType() const
 {
-    std::cout << "Miaaaouuu.." << std::endl;
+    return _type;
 }
 
+void    Animal::makeSound() const
+{
+
+}
