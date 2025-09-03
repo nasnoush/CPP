@@ -6,14 +6,15 @@
 /*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 13:00:07 by nas               #+#    #+#             */
-/*   Updated: 2025/09/01 13:56:00 by nas              ###   ########.fr       */
+/*   Updated: 2025/09/03 14:45:03 by nas              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICHARACTER_HPP
 #define ICHARACTER_HPP
 
-#include "../include/Header.hpp"
+#include <string>
+#include "../include/AMateria.hpp"
 
 class ICharacter {
     

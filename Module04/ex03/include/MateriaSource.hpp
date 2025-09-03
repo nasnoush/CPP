@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Header.hpp                                         :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/01 12:41:13 by nas               #+#    #+#             */
-/*   Updated: 2025/09/03 14:39:51 by nas              ###   ########.fr       */
+/*   Created: 2025/09/02 19:59:04 by nas               #+#    #+#             */
+/*   Updated: 2025/09/03 14:45:39 by nas              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_HPP
-#define HEADER_HPP
-
-#include <string>
-#include <iostream>
+#ifndef MATERIASOURCE_HPP
+#define MATERIASOURCE_HPP
 
 #include "../include/AMateria.hpp"
-#include "../include/Cure.hpp"
-#include "../include/Ice.hpp"
-#include "../include/MateriaSource.hpp"
-#include "../include/Character.hpp"
 #include "../include/IMateriaSource.hpp"
-#include "../include/ICharacter.hpp"
+
+class MateriaSource : public IMateriaSource {
+    
+    public:
+        MateriaSource();
+        ~MateriaSource();
+        MateriaSource(const MateriaSource &other);
+        MateriaSource& operator=(const MateriaSource &other);
+
+        void learnMateria(AMateria*);
+        AMateria* createMateria(std::string const & type);
+        
+    private :
+        AMateria* _mat[4];
+};
 
 #endif

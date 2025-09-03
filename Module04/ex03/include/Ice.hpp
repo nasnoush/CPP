@@ -6,14 +6,16 @@
 /*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 12:58:20 by nas               #+#    #+#             */
-/*   Updated: 2025/09/01 13:55:56 by nas              ###   ########.fr       */
+/*   Updated: 2025/09/03 14:58:57 by nas              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICE_HPP
 #define ICE_HPP
 
-#include "../include/Header.hpp"
+#include "../include/AMateria.hpp"
+#include "../include/ICharacter.hpp"
+#include <iostream>
 
 class Ice : public AMateria {
 

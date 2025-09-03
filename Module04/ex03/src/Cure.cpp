@@ -6,11 +6,11 @@
 /*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 13:03:53 by nas               #+#    #+#             */
-/*   Updated: 2025/09/01 13:09:15 by nas              ###   ########.fr       */
+/*   Updated: 2025/09/03 14:40:51 by nas              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Header.hpp"
+#include "../include/Cure.hpp"
 
 Cure::Cure() : AMateria("cure")
 {

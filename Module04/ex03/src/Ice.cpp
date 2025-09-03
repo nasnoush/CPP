@@ -6,11 +6,11 @@
 /*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 13:04:18 by nas               #+#    #+#             */
-/*   Updated: 2025/09/01 13:17:28 by nas              ###   ########.fr       */
+/*   Updated: 2025/09/03 14:41:03 by nas              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/Header.hpp"
+#include "../include/Ice.hpp"
 
 Ice::Ice() : AMateria("ice")
 {

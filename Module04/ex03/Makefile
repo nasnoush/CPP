@@ -3,6 +3,11 @@ CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS =  src/main.cpp \
+		src/AMateria.cpp \
+		src/Character.cpp \
+		src/Cure.cpp \
+		src/Ice.cpp \
+		src/MateriaSource.cpp \
 		
 OBJ = $(SRCS:.cpp=.o)
 

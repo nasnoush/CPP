@@ -6,14 +6,15 @@
 /*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 13:01:59 by nas               #+#    #+#             */
-/*   Updated: 2025/09/01 13:56:03 by nas              ###   ########.fr       */
+/*   Updated: 2025/09/03 14:45:17 by nas              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef IMATERIASOURCE_HPP
 #define IMATERIASOURCE_HPP
 
-#include "../include/Header.hpp"
+#include <string>
+#include "../include/AMateria.hpp"
 
 class IMateriaSource {
     
