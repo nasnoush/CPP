@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: nadahman <nadahman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 19:59:26 by nas               #+#    #+#             */
-/*   Updated: 2025/09/03 14:59:31 by nas              ###   ########.fr       */
+/*   Updated: 2025/09/15 14:00:17 by nadahman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 MateriaSource::MateriaSource() : IMateriaSource()
 {
     for (int i = 0; i < 4; i++)
-        _mat[i] = nullptr;
+        _mat[i] = NULL;
 }
 
 MateriaSource::MateriaSource(const MateriaSource& other) : IMateriaSource(other)
 {
     for (int i = 0; i < 4; i++)
     {
-        if (other._mat[i] != nullptr)
+        if (other._mat[i] != NULL)
             _mat[i] = other._mat[i]->clone();
         else
-            _mat[i] = nullptr;
+            _mat[i] = NULL;
     }
 }
 
@@ -36,15 +36,15 @@ MateriaSource& MateriaSource::operator=(const MateriaSource &other)
         for (int i = 0; i < 4; i++)
         {
             delete _mat[i];
-            _mat[i] = nullptr;
+            _mat[i] = NULL;
         }
         
         for (int i = 0; i < 4; i++)
         {
-            if (other._mat[i] != nullptr)
+            if (other._mat[i] != NULL)
                 _mat[i] = other._mat[i]->clone();
             else
-                _mat[i] = nullptr;
+                _mat[i] = NULL;
         }
     }
     return *this;
@@ -60,7 +60,7 @@ void    MateriaSource::learnMateria(AMateria* m)
 {
     for (int i = 0; i < 4; i++)
     {
-        if (_mat[i] == nullptr)
+        if (_mat[i] == NULL)
         {    
             _mat[i] = m->clone();
             break ;
@@ -72,10 +72,10 @@ AMateria* MateriaSource::createMateria(std::string const & type)
 {
     for (int i = 0; i < 4; i++)
     {
-        if (_mat[i] != nullptr && type == _mat[i]->getType())
+        if (_mat[i] != NULL && type == _mat[i]->getType())
         {
             return (_mat[i]->clone());
         }
     }
-    return (nullptr);
+    return (NULL);
 }

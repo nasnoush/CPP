@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: nadahman <nadahman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 13:58:38 by nas               #+#    #+#             */
-/*   Updated: 2025/09/03 15:07:52 by nas              ###   ########.fr       */
+/*   Updated: 2025/09/15 13:59:55 by nadahman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ Character::Character() : ICharacter()
     _name = "";
     for (int i = 0; i < 4; i++)
     {    
-        _inv[i] = nullptr;
+        _inv[i] = NULL;
     }
     for (int i = 0; i < 10; i++)
     {    
-        _box[i] = nullptr;
+        _box[i] = NULL;
     }
 }
 
@@ -32,18 +32,18 @@ Character::Character(const Character &other) : ICharacter(other)
     
     for (int i = 0; i < 4; i++)
     {     
-        if (other._inv[i] != nullptr)
+        if (other._inv[i] != NULL)
             _inv[i] = other._inv[i]->clone();
         else
-            _inv[i] = nullptr;
+            _inv[i] = NULL;
     }
     
     for (int i = 0; i < 10; i++)
     {     
-        if (other._box[i] != nullptr)
+        if (other._box[i] != NULL)
             _box[i] = other._box[i]->clone();
         else
-            _box[i] = nullptr;
+            _box[i] = NULL;
     }
     
 }
@@ -57,28 +57,28 @@ Character& Character::operator=(const Character &other)
         for (int i = 0; i < 4; i++)
         {    
             delete _inv[i];
-            _inv[i] = nullptr;
+            _inv[i] = NULL;
         }
         for (int i = 0; i < 10; i++)
         {    
             delete _box[i];
-            _box[i] = nullptr;
+            _box[i] = NULL;
         }
 
         for (int i = 0; i < 4; i++)
         {     
-            if (other._inv[i] != nullptr)
+            if (other._inv[i] != NULL)
                 _inv[i] = other._inv[i]->clone();
             else
-                _inv[i] = nullptr;
+                _inv[i] = NULL;
         }
     
         for (int i = 0; i < 10; i++)
         {     
-            if (other._box[i] != nullptr)
+            if (other._box[i] != NULL)
                 _box[i] = other._box[i]->clone();
             else
-                _box[i] = nullptr;
+                _box[i] = NULL;
         }
     }
     return (*this);
@@ -101,7 +101,7 @@ void Character::equip(AMateria* m)
 {
     for (int i = 0; i < 4; i++)
     {
-        if (_inv[i] == nullptr)
+        if (_inv[i] == NULL)
         {    
             _inv[i] = m;
             break;
@@ -115,13 +115,13 @@ void Character::unequip(int idx)
     {
         for (int i = 0; i < 10; i++)
         {
-            if (_box[i] == nullptr)
+            if (_box[i] == NULL)
             {   
                 _box[i] = _inv[idx];
                 break;
             }
         }
-        _inv[idx] = nullptr;
+        _inv[idx] = NULL;
     }
     else
         std::cout << "Index d'inventaire non valide !" << std::endl;
@@ -131,7 +131,7 @@ void Character::use(int idx, ICharacter& target)
 {
     if (idx >= 0 && idx <= 3)
     {
-        if (_inv[idx] != nullptr)
+        if (_inv[idx] != NULL)
             _inv[idx]->use(target);
     }
 }
