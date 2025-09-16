@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: nadahman <nadahman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 12:00:56 by nas               #+#    #+#             */
-/*   Updated: 2025/08/30 12:45:35 by nas              ###   ########.fr       */
+/*   Updated: 2025/09/16 12:50:20 by nadahman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 
 int main()
 {
-    Animal *a = new Animal();
     const int size = 4;
     Animal* animals[size];
 

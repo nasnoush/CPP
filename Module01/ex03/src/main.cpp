@@ -31,13 +31,12 @@ int main()
 		club.setType("some other type of club");
 		jim.attack();
 	}
-
 	{
-		Weapon club = Weapon("COLT45");
-		HumanB nas("NAS");
+		Weapon club = Weapon("baton");
+		HumanB nas("Nas");
 		nas.setWeapon(club);
 		nas.attack();
-		club.setType("nothing");
+		club.setType("baton dur");
 		nas.attack();
 	}
 	return 0;

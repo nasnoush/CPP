@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: nadahman <nadahman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/14 16:08:07 by nas               #+#    #+#             */
-/*   Updated: 2025/08/14 17:22:14 by nas              ###   ########.fr       */
+/*   Updated: 2025/09/16 11:09:07 by nadahman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,12 +78,16 @@ void    Harl::complain(std::string level)
     switch (pos)
     {
         case 0:
-            this->debug(); 
+            this->debug();
+            // fallthrough
         case 1:
             this->info();
+            // fallthrough
         case 2:
             this->warning();
+            // fallthrough
         case 3:
             this->error();
+            break;
     }
 }

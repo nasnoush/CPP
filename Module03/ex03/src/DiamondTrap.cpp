@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: nadahman <nadahman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/24 13:23:39 by nas               #+#    #+#             */
-/*   Updated: 2025/08/24 14:00:22 by nas              ###   ########.fr       */
+/*   Updated: 2025/09/16 12:47:31 by nadahman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name")
     _attack_damage = 30;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap &other) : ClapTrap(other)
+DiamondTrap::DiamondTrap(const DiamondTrap &other) : ClapTrap(other), FragTrap(), ScavTrap()
 {
     _d_name = other._d_name;
     _name = other._name;
