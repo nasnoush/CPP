@@ -6,7 +6,7 @@
 /*   By: nadahman <nadahman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 19:59:26 by nas               #+#    #+#             */
-/*   Updated: 2025/09/15 14:00:17 by nadahman         ###   ########.fr       */
+/*   Updated: 2025/09/16 14:10:33 by nadahman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ void    MateriaSource::learnMateria(AMateria* m)
             break ;
         }
     }
+    delete m;
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type)

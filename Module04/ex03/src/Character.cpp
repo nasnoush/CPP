@@ -6,7 +6,7 @@
 /*   By: nadahman <nadahman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 13:58:38 by nas               #+#    #+#             */
-/*   Updated: 2025/09/16 13:25:36 by nadahman         ###   ########.fr       */
+/*   Updated: 2025/09/16 14:15:00 by nadahman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ Character::~Character()
 {
     for (int i = 0; i < 4; i++)
     {    
-        if (_inv[i])
+        if (_inv[i])  
             delete _inv[i];
     }
     for (int i = 0; i < 10; i++)
