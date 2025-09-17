@@ -6,7 +6,7 @@
 /*   By: nadahman <nadahman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 13:58:38 by nas               #+#    #+#             */
-/*   Updated: 2025/09/16 14:15:00 by nadahman         ###   ########.fr       */
+/*   Updated: 2025/09/17 10:10:51 by nadahman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,10 @@ Character::~Character()
 Character::Character(const std::string &name)
 {
     _name = name;
+    for (int i = 0; i < 4; i++)
+        _inv[i] = NULL;
+    for (int i = 0; i < 10; i++)  
+        _box[i] = NULL;
 }
 
 void Character::equip(AMateria* m)
