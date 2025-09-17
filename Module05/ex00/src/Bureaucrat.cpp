@@ -6,7 +6,7 @@
 /*   By: nadahman <nadahman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 10:15:25 by nadahman          #+#    #+#             */
-/*   Updated: 2025/09/17 13:52:24 by nadahman         ###   ########.fr       */
+/*   Updated: 2025/09/17 14:16:51 by nadahman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void	Bureaucrat::incr_grade()
 	_grade -= 1;
 	try
 	{
-		if (!(_grade >= 1 && _grade <= 150))
+		if (_grade < 1)
 		{
 			throw "Impossible d'atteindre ce grade !";
 		}
@@ -88,7 +88,7 @@ void	Bureaucrat::decr_grade()
 	_grade += 1;
 	try
 	{
-		if (!(_grade >= 1 && _grade <= 150))
+		if ((_grade > 150))
 		{
 			throw "Impossible d'atteindre ce grade !";
 		}
