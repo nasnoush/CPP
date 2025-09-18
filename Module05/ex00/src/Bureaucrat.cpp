@@ -6,7 +6,7 @@
 /*   By: nadahman <nadahman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 10:15:25 by nadahman          #+#    #+#             */
-/*   Updated: 2025/09/17 14:16:51 by nadahman         ###   ########.fr       */
+/*   Updated: 2025/09/18 10:58:32 by nadahman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,15 @@ Bureaucrat::Bureaucrat()
 	_grade = 0;
 }
 
-Bureaucrat::Bureaucrat(std::string name, int grade)
+Bureaucrat::Bureaucrat(const std::string name, int grade)
 {
 	_name = name;
 	_grade = grade;
 	
-	try
-	{
-		if (!(grade >= 1 && grade <= 150))
-		{
-			throw "Impossible d'atteindre ce grade !";
-		}
-	}
-	catch (const char *err)
-	{
-		std::cerr << _name << " bureaucrat grade: " << err << std::endl;
-	}
+	if (grade < 1)
+		throw GradeTooHighException();
+	if (grade > 150)
+		throw GradeTooLowException();
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &other)
@@ -69,34 +62,16 @@ int	Bureaucrat::getGrade()
 
 void	Bureaucrat::incr_grade()
 {
+	if (_grade - 1 < 1)
+		throw GradeTooHighException();
 	_grade -= 1;
-	try
-	{
-		if (_grade < 1)
-		{
-			throw "Impossible d'atteindre ce grade !";
-		}
-	}
-	catch (const char *err)
-	{
-		std::cerr << "Error : " << err << std::endl;
-	}
 }
 
 void	Bureaucrat::decr_grade()
 {
+	if ((_grade + 1 > 150))
+		throw GradeTooLowException();
 	_grade += 1;
-	try
-	{
-		if ((_grade > 150))
-		{
-			throw "Impossible d'atteindre ce grade !";
-		}
-	}
-	catch (const char *err)
-	{
-		std::cerr << "Error : " << err << std::endl;
-	}
 }
 
 

@@ -31,6 +31,6 @@ int main (int argc, char **argv)
 	}
 	for (j = 1; argv[j]; j++)
 	{
-		std::cout << argv[j] << std::endl;
+		std::cout << argv[j];
 	}
 }
