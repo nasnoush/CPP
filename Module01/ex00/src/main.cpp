@@ -14,11 +14,11 @@
 
 int main()
 {
-	Zombie	*z = newZombie("test");
+	Zombie	*z = newZombie("test"); // sur le tas
 	z->announce();
 	delete z;
 
-	randomChump("Nas");
+	randomChump("Nas"); // pile
 	
 	return (0);
 }

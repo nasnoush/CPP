@@ -14,7 +14,7 @@
 
 Zombie::Zombie(void) {
 
-	
+		std::cout << _name << "Constructor called" << std::endl;
 }
 
 Zombie::~Zombie(void) {
