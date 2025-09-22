@@ -32,12 +32,14 @@ int main()
 		jim.attack();
 	}
 	{
-		Weapon club = Weapon("baton");
-		HumanB nas("Nas");
-		nas.setWeapon(club);
+		Weapon gun = Weapon("gun");
+		HumanA nas("Nas", gun);
 		nas.attack();
-		club.setType("baton dur");
-		nas.attack();
+
+		HumanB sam("Sam");
+		sam.attack();
+		sam.setWeapon(gun);
+		sam.attack();
 	}
 	return 0;
 }

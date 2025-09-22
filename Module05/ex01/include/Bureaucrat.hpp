@@ -6,7 +6,7 @@
 /*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 10:15:13 by nadahman          #+#    #+#             */
-/*   Updated: 2025/09/22 10:50:40 by nas              ###   ########.fr       */
+/*   Updated: 2025/09/22 14:09:27 by nas              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include <ostream>
 #include <iostream>
 #include <exception>
+
+#include "../include/Form.hpp"
 
 class Bureaucrat {
 
@@ -41,6 +43,8 @@ class Bureaucrat {
 		class GradeTooLowException : public std::exception {
 				const char *what() const throw() { return "Grade trop bas !";}
 		};
+		
+		void	signForm(Form &f);
 		
 	private :
 	
