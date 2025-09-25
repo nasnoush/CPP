@@ -1,0 +1,8 @@
+je cree un bureaucrat
+Je cree une form
+
+le bureaucrat doit tenter de signer la form si il peut
+le bureaucrat doit tenter d exec la form si il peut
+
+verifs :
+- Si le grade est infer

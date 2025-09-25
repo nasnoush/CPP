@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: nadahman <nadahman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 12:17:34 by nas               #+#    #+#             */
-/*   Updated: 2025/08/21 13:19:23 by nas              ###   ########.fr       */
+/*   Updated: 2025/09/25 10:05:00 by nadahman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main()
     Point dedans(5, 5);
     Point cote(5, 0);
     Point sommet(0, 0);
-    Point dehors(10, 10);
+    Point dehors(10, 11);
 
     std::cout << "point dedans : " << bsp(a, b, c, dedans) << std::endl;
     std::cout << "point cote : " << bsp(a, b, c, cote) << std::endl;

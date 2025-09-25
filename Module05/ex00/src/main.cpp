@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: nadahman <nadahman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 10:15:34 by nadahman          #+#    #+#             */
-/*   Updated: 2025/09/22 11:09:02 by nas              ###   ########.fr       */
+/*   Updated: 2025/09/24 13:15:46 by nadahman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,28 +77,6 @@ int main()
 	{
 		std::cerr << e.what() << '\n';
 	}
-	
-	
-	// std::cout << "j incremente" << std::endl;
-	// c.incr_grade();
-	// std::cout << "Grade : " << c.getGrade() << std::endl;
-	
-	// std::cout << "je decremente" << std::endl;
-	// c.decr_grade();
-	// std::cout << "Grade : " << c.getGrade() << std::endl;
-	
-	// std::cout << "je decremente" << std::endl;
-	// c.decr_grade();
-	// std::cout << "Grade : " << c.getGrade() << std::endl;
-	
-	// c.decr_grade();
-	// c.decr_grade();
-//	catch (std::exception &e)
-//	{
-//		std::cout << e.what() << std::endl;
-//	}
-	
-	// std::cout << "Grade : " << c.getGrade() << std::endl;
 	
 	return 0;
 }

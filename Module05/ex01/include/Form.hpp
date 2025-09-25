@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: nadahman <nadahman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 11:25:39 by nas               #+#    #+#             */
-/*   Updated: 2025/09/22 14:26:59 by nas              ###   ########.fr       */
+/*   Updated: 2025/09/24 11:47:50 by nadahman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class Form {
     public :
     
         Form();
-        // je dois faier
+        Form(const std::string name, const int gradeTosign, const int gradeToExec); // je dois faier
         Form (const Form& other);
         Form& operator=(const Form& other);
         ~Form();
