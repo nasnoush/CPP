@@ -6,7 +6,7 @@
 /*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 12:00:56 by nas               #+#    #+#             */
-/*   Updated: 2025/08/24 12:40:33 by nas              ###   ########.fr       */
+/*   Updated: 2025/09/29 10:55:07 by nas              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int main()
     beta.highFivesGuys();
 
     std::cout << "\n--- Épuisement d'énergie ---" << std::endl;
-    // Faire attaquer beta jusqu'à épuisement de son énergie
+
     for (int i = 0; i < 105; ++i)
         beta.attack("TargetX");
 

@@ -6,7 +6,7 @@
 /*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 12:00:56 by nas               #+#    #+#             */
-/*   Updated: 2025/08/23 20:29:10 by nas              ###   ########.fr       */
+/*   Updated: 2025/09/29 10:46:41 by nas              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,24 @@
 
 int main()
 {
-    std::cout << "\n--- Création des robots ---\n" << std::endl;
-    ClapTrap alpha("Alpha");
-    ScavTrap beta("Beta");
+    ClapTrap c = ClapTrap("Clap");
+    ScavTrap s = ScavTrap("Scav");
 
-    std::cout << "\n--- Tests d'attaques ---\n" << std::endl;
-    alpha.attack("Target1");       
-    alpha.attack("Target2");
-    beta.attack("Target1"); 
-    beta.attack("Target2");
-
-    std::cout << "\n--- Tests de réparation ---\n" << std::endl;
-    alpha.beRepaired(5);
-    beta.beRepaired(10);
-
-    std::cout << "\n--- Test capacité spéciale ScavTrap ---\n" << std::endl;
-    beta.guardGate();
-
-    std::cout << "\n--- Épuisement d'énergie ---\n" << std::endl;
-    for (int i = 0; i < 55; i++)
-        beta.attack("TargetX");
-
-    std::cout << "\n--- Fin du programme ---\n" << std::endl;
-
+    std::cout << "Clap attack :" << std::endl;
+    for (int i = 0; i < 11; i++)
+        c.attack("Nas");
+    
+    std::cout << std::endl << "Scav attack :" << std::endl;
+    for (int i = 0; i < 51; i++)
+        s.attack("Tag");
+    
+    std::cout << std::endl << "Repaired :" << std::endl;
+    for (int i = 0; i < 2; i++) {     
+        s.beRepaired(5);
+        c.beRepaired(10);
+    }
+    
+    s.guardGate();
+    
     return 0;
 }
