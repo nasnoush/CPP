@@ -6,7 +6,7 @@
 /*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 12:00:56 by nas               #+#    #+#             */
-/*   Updated: 2025/08/28 13:31:12 by nas              ###   ########.fr       */
+/*   Updated: 2025/09/30 18:53:56 by nas              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int main()
     const int size = 4;
     Animal* animals[size];
 
+    std::cout << "test des constr et destr" << std::endl;
     for (int i = 0; i < size; ++i)
     {
         if (i % 2 == 0)
@@ -32,6 +33,24 @@ int main()
 
     for (int i = 0; i < size; ++i)
         delete animals[i];
+        
+    std::cout << std::endl;
+    std::cout << "test de la deep copy" << std::endl;
+    Dog* original = new Dog();
+    original->makeSound();
+    std::cout << std::endl;
+    
+    Dog* copy = new Dog(*original);
+    copy->makeSound();
+    std::cout << std::endl;
+    
+    delete original;
+    std::cout << std::endl;
+    
+    copy->makeSound();
+    std::cout << std::endl;
+    
+    delete copy;
 
     return 0;
 }

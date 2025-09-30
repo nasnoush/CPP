@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nadahman <nadahman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 12:00:56 by nas               #+#    #+#             */
-/*   Updated: 2025/09/16 12:49:01 by nadahman         ###   ########.fr       */
+/*   Updated: 2025/09/30 18:24:07 by nas              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,26 +18,40 @@
 
 int main()
 {
-    const Animal* meta = new Animal();
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
-    i->makeSound(); //will output the cat sound!
-    j->makeSound();
-    meta->makeSound();
+    // Animal a;
+    // Dog d;
+    // Cat c;
     
-    const WrongAnimal* wmeta = new WrongAnimal();
-    const WrongAnimal* wi = new WrongCat();
-
-    wi->makeSound();
-    wmeta->makeSound();
-
-    delete wmeta;
-    delete wi;
-    delete meta;
-    delete j;
-    delete i;
+    Animal *a = new Animal();
+    Animal *d = new Dog();
+    Animal *c = new Cat();
+    
+    std::cout << std::endl;
+    std::cout << d->getType() << std::endl;
+    std::cout << c->getType() << std::endl;
+    
+    std::cout << std::endl;
+    a->makeSound();
+    d->makeSound();
+    c->makeSound();
+    
+    std::cout << std::endl;
+    WrongAnimal *w = new WrongAnimal();
+    WrongAnimal *wc = new WrongCat();
+    WrongCat *wcat = new WrongCat();
+    
+    std::cout << std::endl;
+    w->makeSound();
+    wc->makeSound();
+    wcat->makeSound();
+    
+    delete a;
+    delete d;
+    delete c;
+    delete w;
+    delete wc;
+    delete wcat;
+    
     
     return 0;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nadahman <nadahman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 12:42:28 by nas               #+#    #+#             */
-/*   Updated: 2025/09/30 13:27:42 by nadahman         ###   ########.fr       */
+/*   Updated: 2025/09/30 18:48:17 by nas              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ class Dog : public Animal {
         ~Dog();
     
         void    makeSound() const;
-
-    protected :
+        
+    private :
     
         Brain*  _brain;
 };

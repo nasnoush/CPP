@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nadahman <nadahman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 12:42:26 by nas               #+#    #+#             */
-/*   Updated: 2025/09/30 13:27:39 by nadahman         ###   ########.fr       */
+/*   Updated: 2025/09/30 18:30:25 by nas              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Cat : public Animal {
     
         void    makeSound() const;
 
-    protected :
+    private :
     
         Brain*  _brain;
         
