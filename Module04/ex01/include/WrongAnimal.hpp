@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: nadahman <nadahman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 13:35:32 by nas               #+#    #+#             */
-/*   Updated: 2025/08/26 13:36:42 by nas              ###   ########.fr       */
+/*   Updated: 2025/09/30 13:22:10 by nadahman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class WrongAnimal {
         std::string    getType() const;
         void    makeSound() const;
 
-    private :
+    protected :
     
         std::string _type;
         
