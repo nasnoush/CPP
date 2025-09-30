@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: nadahman <nadahman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 19:50:51 by nas               #+#    #+#             */
-/*   Updated: 2025/08/24 12:33:05 by nas              ###   ########.fr       */
+/*   Updated: 2025/09/30 09:58:28 by nadahman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ ScavTrap::~ScavTrap()
 
 void    ScavTrap::guardGate()
 {
-    std::cout << "function guardGate called" << std::endl;
+    std::cout << "function guardGate called : Guardian's mode activated" << std::endl;
 }
 
  void ScavTrap::attack(const std::string& target)

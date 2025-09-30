@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: nadahman <nadahman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 12:00:56 by nas               #+#    #+#             */
-/*   Updated: 2025/08/24 14:02:38 by nas              ###   ########.fr       */
+/*   Updated: 2025/09/30 10:24:33 by nadahman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int main()
     gamma.attack("Target1");
     gamma.attack("Target2");
 
-    delta.attack("Target1"); // doit utiliser ScavTrap::attack
+    delta.attack("Target1");
     delta.attack("Target2");
 
     std::cout << "\n--- Tests de réparation ---" << std::endl;
