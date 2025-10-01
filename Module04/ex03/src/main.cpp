@@ -6,7 +6,7 @@
 /*   By: nadahman <nadahman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 12:53:32 by nas               #+#    #+#             */
-/*   Updated: 2025/09/16 14:05:14 by nadahman         ###   ########.fr       */
+/*   Updated: 2025/10/01 10:52:07 by nadahman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,29 @@ int main()
 
     me->use(0, *bob);
     me->use(1, *bob);
+    
+    std::cout << std::endl;
+    std::cout << "Test de unequip (ca ne doit rien faire car plus rien equipe)" << std::endl;
+    
+    me->unequip(0);
+    me->unequip(1);
+    
+    me->use(0, *bob);
+    me->use(1, *bob);
+    
+    std::cout << std::endl;
+    std::cout << "Check de box" << std::endl;
+    
+    AMateria* m = me->getBox(0);
+    if (m)
+        std::cout << "La box est rempli par :" << m->getType() << std::endl;
+    else
+        std::cout << "La box est vide" << std::endl;
 
     delete bob;
     delete me;
     delete src;
+    
 
     return 0;
 }

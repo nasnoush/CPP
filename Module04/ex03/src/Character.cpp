@@ -6,7 +6,7 @@
 /*   By: nadahman <nadahman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/01 13:58:38 by nas               #+#    #+#             */
-/*   Updated: 2025/09/17 10:10:51 by nadahman         ###   ########.fr       */
+/*   Updated: 2025/10/01 10:16:58 by nadahman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,6 +132,13 @@ void Character::unequip(int idx)
     else
         std::cout << "Index d'inventaire non valide !" << std::endl;
 }
+
+// Fonction supp pour les tests
+AMateria* Character::getBox(int index)
+{
+    return _box[index];
+}
+
  
 void Character::use(int idx, ICharacter& target)
 {
