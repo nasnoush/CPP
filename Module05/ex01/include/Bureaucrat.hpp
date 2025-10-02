@@ -6,7 +6,7 @@
 /*   By: nadahman <nadahman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 10:15:13 by nadahman          #+#    #+#             */
-/*   Updated: 2025/09/24 10:03:33 by nadahman         ###   ########.fr       */
+/*   Updated: 2025/10/02 10:06:54 by nadahman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #include <exception>
 
 #include "../include/Form.hpp"
+class Form;
 
 class Bureaucrat {
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: nadahman <nadahman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 10:15:25 by nadahman          #+#    #+#             */
-/*   Updated: 2025/09/22 14:25:53 by nas              ###   ########.fr       */
+/*   Updated: 2025/10/02 11:25:59 by nadahman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat &other) : _name(other._name), _grade(oth
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat &other)
 {
-	if (this != &other)
+	if (this != &other)	
 		_grade = other._grade;
 	return (*this);
 }
@@ -78,12 +78,10 @@ void	Bureaucrat::signForm(Form &f)
 	try
 	{
 		f.beSigned(*this);
-		std::cout << getName() << " signed " << f.getName() << std::endl;
 	}
 	catch(const std::exception& e)
-	{
+	{	
 		std::cout << getName() << " couldn't sign " << f.getName() << " because " << e.what() << std::endl;
 	}
-	
 }
 
