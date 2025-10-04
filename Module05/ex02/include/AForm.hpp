@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 11:25:39 by nas               #+#    #+#             */
-/*   Updated: 2025/10/04 12:16:30 by nas              ###   ########.fr       */
+/*   Updated: 2025/10/04 12:59:14 by nas              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Form {
         Form(const std::string name, const int gradeTosign, const int gradeToExec); // je dois faier
         Form (const Form& other);
         Form& operator=(const Form& other);
-        ~Form();
+        virtual ~Form();
         
         int getGradeToSign() const;
         int getGradetoExec() const;
@@ -43,6 +43,7 @@ class Form {
 			const char *what() const throw() { return "Form : Grade trop bas !";}
 		};
 		
+        virtual void execute(Bureaucrat const & executor) const = 0;
     
     private :
         const std::string _name;
