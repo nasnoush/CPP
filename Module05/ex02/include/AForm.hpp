@@ -6,7 +6,7 @@
 /*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/22 11:25:39 by nas               #+#    #+#             */
-/*   Updated: 2025/10/04 12:59:14 by nas              ###   ########.fr       */
+/*   Updated: 2025/10/05 15:21:21 by nas              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,15 @@
 
 class Bureaucrat;
 
-class Form {
+class AForm {
 
     public :
     
-        Form();
-        Form(const std::string name, const int gradeTosign, const int gradeToExec); // je dois faier
-        Form (const Form& other);
-        Form& operator=(const Form& other);
-        virtual ~Form();
+        AForm();
+        AForm(const std::string name, const int gradeTosign, const int gradeToExec); // je dois faier
+        AForm (const AForm& other);
+        AForm& operator=(const AForm& other);
+        virtual ~AForm();
         
         int getGradeToSign() const;
         int getGradetoExec() const;
@@ -42,8 +42,13 @@ class Form {
 		class GradeTooLowException : public std::exception {
 			const char *what() const throw() { return "Form : Grade trop bas !";}
 		};
+        
+        class FormNotSignedException : public std::exception {
+            const char *what() const throw() { return "Form not signed !";}
+        };
 		
-        virtual void execute(Bureaucrat const & executor) const = 0;
+        void execute(Bureaucrat const & executor) const;
+        virtual void action() const = 0;
     
     private :
         const std::string _name;
@@ -52,6 +57,6 @@ class Form {
         const int _gradeRequieredToExecute;
 };
 
-std::ostream& operator<<(std::ostream& flux, const Form& f);
+std::ostream& operator<<(std::ostream& flux, const AForm& f);
 
 #endif

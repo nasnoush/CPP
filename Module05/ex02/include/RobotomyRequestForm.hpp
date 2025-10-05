@@ -6,7 +6,7 @@
 /*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/04 12:30:31 by nas               #+#    #+#             */
-/*   Updated: 2025/10/05 11:30:55 by nas              ###   ########.fr       */
+/*   Updated: 2025/10/05 15:38:04 by nas              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define ROBOTOMYREQUESTFORM_HPP
 #include "../include/AForm.hpp"
 
-class RobotomyRequestForm : public Form {
+class RobotomyRequestForm : public AForm {
   
     public :
         RobotomyRequestForm();
@@ -23,7 +23,7 @@ class RobotomyRequestForm : public Form {
         RobotomyRequestForm& operator=(const RobotomyRequestForm &other);
         ~RobotomyRequestForm();
 
-        void execute(Bureaucrat const & executor) const;
+        void action() const;
     private :
         std::string _target;
 };

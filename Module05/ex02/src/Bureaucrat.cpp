@@ -6,7 +6,7 @@
 /*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 10:15:25 by nadahman          #+#    #+#             */
-/*   Updated: 2025/10/03 20:04:14 by nas              ###   ########.fr       */
+/*   Updated: 2025/10/05 15:49:55 by nas              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ std::ostream& operator<<(std::ostream& flux, const Bureaucrat& b)
 }
 
 
-void	Bureaucrat::signForm(Form &f)
+void	Bureaucrat::signForm(AForm &f)
 {
 	try
 	{
@@ -86,3 +86,17 @@ void	Bureaucrat::signForm(Form &f)
 	}
 }
 
+void Bureaucrat::executeForm(AForm const & form) const
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << getName() << " executed " << form.getName() << std::endl;
+		
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << getName() << " couldn't execute " << form.getName() << " because " << e.what() << std::endl;
+	}
+	
+}

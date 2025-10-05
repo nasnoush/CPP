@@ -4,7 +4,7 @@ FLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
 SRCS =  src/main.cpp \
 		src/Bureaucrat.cpp \
-		src/Form.cpp \
+		src/AForm.cpp \
 		src/ShrubberyCreationForm.cpp \
 		src/PresidentialPardonForm.cpp \
 		src/RobotomyRequestForm.cpp \

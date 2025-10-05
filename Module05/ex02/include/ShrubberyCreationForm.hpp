@@ -6,7 +6,7 @@
 /*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/04 12:30:11 by nas               #+#    #+#             */
-/*   Updated: 2025/10/05 12:33:05 by nas              ###   ########.fr       */
+/*   Updated: 2025/10/05 15:38:07 by nas              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <iostream>
 #include <fstream>
 
-class ShrubberyCreationForm : public Form {
+class ShrubberyCreationForm : public AForm {
     
     public :
         ShrubberyCreationForm();
@@ -25,7 +25,7 @@ class ShrubberyCreationForm : public Form {
         ShrubberyCreationForm& operator=(const ShrubberyCreationForm& other);
         ~ShrubberyCreationForm();
         
-        void execute(Bureaucrat const & executor) const;
+        void action() const;
         
     private :
         std::string _target;

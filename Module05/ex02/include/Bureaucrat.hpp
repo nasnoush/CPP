@@ -6,7 +6,7 @@
 /*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 10:15:13 by nadahman          #+#    #+#             */
-/*   Updated: 2025/10/05 11:53:39 by nas              ###   ########.fr       */
+/*   Updated: 2025/10/05 15:39:20 by nas              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 #include <exception>
 
 #include "../include/AForm.hpp"
-class Form;
+class AForm;
 
 class Bureaucrat {
 
@@ -45,7 +45,8 @@ class Bureaucrat {
 				const char *what() const throw() { return "Bureaucrat : Grade trop bas !";}
 		};
 		
-		void	signForm(Form &f);
+		void	signForm(AForm &f);
+		void executeForm(AForm const & form) const;
 		
 	private :
 	

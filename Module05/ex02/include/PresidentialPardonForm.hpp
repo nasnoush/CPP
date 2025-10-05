@@ -6,7 +6,7 @@
 /*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/04 12:51:16 by nas               #+#    #+#             */
-/*   Updated: 2025/10/05 11:31:32 by nas              ###   ########.fr       */
+/*   Updated: 2025/10/05 15:38:00 by nas              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #define PRESIDENTIALPARDONFORM_HPP
 #include "../include/AForm.hpp"
 
-class PresidentialPardonForm : public Form {
+class PresidentialPardonForm : public AForm {
     
     public :
         PresidentialPardonForm();
@@ -23,7 +23,7 @@ class PresidentialPardonForm : public Form {
         PresidentialPardonForm& operator=(const PresidentialPardonForm& other);
         ~PresidentialPardonForm();
         
-        void execute(Bureaucrat const & executor) const;
+        void action() const;
         
     private :
         std::string _target;
