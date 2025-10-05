@@ -1,8 +1,42 @@
-je cree un bureaucrat
-Je cree une form
 
-le bureaucrat doit tenter de signer la form si il peut
-le bureaucrat doit tenter d exec la form si il peut
+Décider où placer les vérifications
 
-verifs :
-- Si le grade est infer
+Soit dans chaque classe concrète (ShrubberyCreationForm, RobotomyRequestForm, PresidentialPardonForm).
+
+Soit dans la classe de base AForm (plus élégant), puis déléguer l’action spécifique à une méthode interne des classes concrètes.
+
+Implémenter la méthode execute dans chaque formulaire concret
+
+Vérifier que le formulaire est signé.
+
+Vérifier que le grade du bureaucrat est suffisant pour l’exécution.
+
+Effectuer l’action spécifique à chaque formulaire (création de fichier, robotisation aléatoire, pardon présidentiel).
+
+Lancer une exception appropriée si une condition n’est pas remplie.
+
+Ajouter executeForm dans la classe Bureaucrat
+
+Tenter d’exécuter le formulaire.
+
+Gérer les exceptions avec un message clair si l’exécution échoue.
+
+Afficher un message si l’exécution réussit.
+
+Tester tous les scénarios possibles
+
+Formulaire signé ou non signé.
+
+Bureaucrat avec grade suffisant ou insuffisant pour exécuter.
+
+Actions spécifiques de chaque formulaire.
+
+Cas aléatoires (pour RobotomyRequestForm).
+
+Vérifier la cohérence et robustesse
+
+S’assurer que la hiérarchie de classes fonctionne correctement avec les pointeurs de base.
+
+Vérifier que le destructeur virtuel fonctionne pour toutes les classes dérivées.
+
+Tester les exceptions et l’affichage des messages dans tous les cas.

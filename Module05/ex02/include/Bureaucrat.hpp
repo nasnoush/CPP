@@ -6,7 +6,7 @@
 /*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 10:15:13 by nadahman          #+#    #+#             */
-/*   Updated: 2025/10/04 12:16:42 by nas              ###   ########.fr       */
+/*   Updated: 2025/10/05 11:53:39 by nas              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include <iostream>
 #include <exception>
 
-#include "../include/Form.hpp"
+#include "../include/AForm.hpp"
 class Form;
 
 class Bureaucrat {
