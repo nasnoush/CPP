@@ -6,7 +6,7 @@
 /*   By: nadahman <nadahman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/17 10:15:34 by nadahman          #+#    #+#             */
-/*   Updated: 2025/10/06 10:38:16 by nadahman         ###   ########.fr       */
+/*   Updated: 2025/10/06 13:49:25 by nadahman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,39 @@
 #include "../include/RobotomyRequestForm.hpp"
 #include "../include/PresidentialPardonForm.hpp"
 #include "../include/ShrubberyCreationForm.hpp"
+#include "../include/Intern.hpp"
 #include <ctime>
 
 
 int main()
 {
 	srand(time(NULL));
-	std::cout << "Test 1 : Fonctionne" << std::endl;
-	Bureaucrat c = Bureaucrat("Nas", 42);
-	
-	AForm *f = new RobotomyRequestForm("Contrat");
-	AForm *a = new PresidentialPardonForm("President");
-	AForm *s = new ShrubberyCreationForm("Arbre");
-	
-	c.signForm(*f);
-	c.signForm(*a);
-	c.signForm(*s);
 
-	c.executeForm(*f);
-	c.executeForm(*a);
-	c.executeForm(*s);
+	Intern someRandomIntern;
+	Bureaucrat b = Bureaucrat("Boss", 1);
+	
+	AForm* rrf;
+	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+	b.signForm(*rrf);
+	std::cout << std::endl;
+	
+	AForm* Yan;
+	Yan = someRandomIntern.makeForm("presidential pardon", "contrat");
+	b.signForm(*Yan);
+	std::cout << std::endl;
+	
+	AForm* nas;
+	nas = someRandomIntern.makeForm("shrubbery creation", "arbuste");
+	b.signForm(*nas);
+	std::cout << std::endl;
+	
+	b.executeForm(*rrf);
+	std::cout << std::endl;
+	b.executeForm(*Yan);
+	std::cout << std::endl;
+	b.executeForm(*nas);
+	
 
+	
 	return 0;
 }
