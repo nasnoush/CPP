@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nadahman <nadahman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 10:39:50 by nadahman          #+#    #+#             */
-/*   Updated: 2025/10/06 12:41:35 by nadahman         ###   ########.fr       */
+/*   Updated: 2025/10/06 18:16:39 by nas              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Intern {
 		typedef AForm* (*f)(const std::string&);
 		static const std::string Name[3];
 		static const f Createfonct[3];
-		AForm* makeForm(std::string FormName, std::string FormTarget);
+		AForm* makeForm(std::string const &FormName, std::string const &FormTarget);
 		
 		static AForm* createRobo(const std::string &target);
 		static AForm* createPres(const std::string &target);

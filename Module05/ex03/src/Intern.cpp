@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nadahman <nadahman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 10:46:14 by nadahman          #+#    #+#             */
-/*   Updated: 2025/10/06 12:49:52 by nadahman         ###   ########.fr       */
+/*   Updated: 2025/10/06 18:26:54 by nas              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,16 @@ Intern::Intern()
 
 }
 
-// Intern::Intern(const Intern &other)
-// {
+Intern::Intern(const Intern &other)
+{
+	(void)other;
+}
 
-// }
-
-// Intern& Intern::operator=(const Intern& other)
-// {
-	
-// }
+Intern& Intern::operator=(const Intern& other)
+{
+	(void)other;
+	return *this;
+}
 
 Intern::~Intern()
 {
@@ -61,8 +62,7 @@ const Intern::f Intern::Createfonct[3] =
 	&Intern::createShru
 };
 
-
-AForm* Intern::makeForm(std::string FormName, std::string FormTarget)
+AForm* Intern::makeForm(std::string const &FormName, std::string const &FormTarget)
 {
 	int pos = -1;
 	
@@ -81,16 +81,9 @@ AForm* Intern::makeForm(std::string FormName, std::string FormTarget)
 		return (NULL);
 	}
 	
-	try
-	{
-		Createfonct[pos](FormTarget);
-		std::cout << "Intern creates " << FormTarget << std::endl;
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << FormName << "n'a pas pu etre cree " << e.what() << std::endl;
-	}
+	AForm *f = Createfonct[pos](FormTarget);
 	
+	std::cout << "Intern creates " << Name[pos] << std::endl;
 	
-	return (Createfonct[pos](FormTarget));
+	return (f);
 }
