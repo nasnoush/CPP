@@ -6,7 +6,7 @@
 /*   By: nadahman <nadahman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 10:02:20 by nadahman          #+#    #+#             */
-/*   Updated: 2025/10/07 11:11:39 by nadahman         ###   ########.fr       */
+/*   Updated: 2025/10/07 13:45:49 by nadahman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,17 @@ class ScalarConverter {
 		static void	toInt(std::string value);
 		static void	toFloat(std::string value);
 		static void	toDouble(std::string value);
-
-	private :
+		
 		ScalarConverter();
 		ScalarConverter(const ScalarConverter& other);
 		ScalarConverter& operator=(const ScalarConverter& other);
 		~ScalarConverter();
+
+	private :
+		// ScalarConverter();
+		// ScalarConverter(const ScalarConverter& other);
+		// ScalarConverter& operator=(const ScalarConverter& other);
+		// ~ScalarConverter();
 };
 
 #endif
