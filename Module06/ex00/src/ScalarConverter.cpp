@@ -6,7 +6,7 @@
 /*   By: nadahman <nadahman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 10:02:36 by nadahman          #+#    #+#             */
-/*   Updated: 2025/10/07 13:56:38 by nadahman         ###   ########.fr       */
+/*   Updated: 2025/10/07 14:02:13 by nadahman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	ScalarConverter::toChar(std::string value)
 {
 	if (value.empty())
 	{	
+		// rajouter le isdigit et d autre verif au cas ou 
 		std::cout << "Char : Non displayable" << std::endl;
 		return ;
 	}
