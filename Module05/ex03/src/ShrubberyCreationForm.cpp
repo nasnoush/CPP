@@ -6,7 +6,7 @@
 /*   By: nadahman <nadahman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/04 12:29:58 by nas               #+#    #+#             */
-/*   Updated: 2025/10/06 10:16:35 by nadahman         ###   ########.fr       */
+/*   Updated: 2025/10/08 11:01:13 by nadahman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,6 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 
 void ShrubberyCreationForm::action() const
 {
-    // std::ofstream file(_target + "_shrubbery");
-    
     std::string filename = _target + "_shrubbery";
     std::ofstream file((filename).c_str());
         

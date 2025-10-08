@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: nadahman <nadahman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 10:39:50 by nadahman          #+#    #+#             */
-/*   Updated: 2025/10/06 18:16:39 by nas              ###   ########.fr       */
+/*   Updated: 2025/10/08 10:31:28 by nadahman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,10 @@ class Intern {
 		static AForm* createRobo(const std::string &target);
 		static AForm* createPres(const std::string &target);
 		static AForm* createShru(const std::string &target);
+		
+		class WrongNameForm : public std::exception {
+        const char *what() const throw() { return "Error : Nom de Form introuvable!";}
+        };
 		
 	
 	private :

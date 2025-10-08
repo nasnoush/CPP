@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: nadahman <nadahman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 10:46:14 by nadahman          #+#    #+#             */
-/*   Updated: 2025/10/06 18:26:54 by nas              ###   ########.fr       */
+/*   Updated: 2025/10/08 11:06:45 by nadahman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,10 +76,7 @@ AForm* Intern::makeForm(std::string const &FormName, std::string const &FormTarg
 	}
 	
 	if (pos == -1)
-	{	
-		std::cout << "Error : Nom de Form introuvable !" << std::endl;
-		return (NULL);
-	}
+		throw WrongNameForm();
 	
 	AForm *f = Createfonct[pos](FormTarget);
 	

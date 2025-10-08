@@ -6,7 +6,7 @@
 /*   By: nadahman <nadahman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 10:02:36 by nadahman          #+#    #+#             */
-/*   Updated: 2025/10/07 14:02:13 by nadahman         ###   ########.fr       */
+/*   Updated: 2025/10/08 13:10:23 by nadahman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,3 +64,7 @@ void	ScalarConverter::toInt(std::string value)
 // {		
 
 // }
+
+
+
+THROUGHOUT
