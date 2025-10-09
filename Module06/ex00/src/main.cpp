@@ -6,7 +6,7 @@
 /*   By: nadahman <nadahman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 10:02:24 by nadahman          #+#    #+#             */
-/*   Updated: 2025/10/07 13:46:12 by nadahman         ###   ########.fr       */
+/*   Updated: 2025/10/09 12:38:34 by nadahman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,17 @@ int main (int ac, char **av)
 	// test = m;
 	// std::cout << test << std::endl;
 	
-	(void)ac;
+	if (ac != 2)
+	{	
+		std::cout << "Pas le bon nombre d'argument.." << std::endl;
+ 		return 0;
+	}
 	ScalarConverter a;
 
 	a.toChar(av[1]);
-
+	// a.toInt(av[1]);
+	// a.toFloat(av[1]);
+	// a.toDouble(av[1]);
 	
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: nadahman <nadahman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 10:02:20 by nadahman          #+#    #+#             */
-/*   Updated: 2025/10/07 13:45:49 by nadahman         ###   ########.fr       */
+/*   Updated: 2025/10/09 11:50:35 by nadahman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 #define SCALARCONVERTER_HPP
 #include <string>
 #include <iostream>
+#include <sstream>
+#include <stdlib.h>
+
 
 class ScalarConverter {
 

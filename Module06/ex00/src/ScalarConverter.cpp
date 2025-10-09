@@ -6,7 +6,7 @@
 /*   By: nadahman <nadahman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 10:02:36 by nadahman          #+#    #+#             */
-/*   Updated: 2025/10/08 13:10:23 by nadahman         ###   ########.fr       */
+/*   Updated: 2025/10/09 12:43:19 by nadahman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,36 +35,14 @@ ScalarConverter::~ScalarConverter()
 
 void	ScalarConverter::toChar(std::string value)
 {
-	if (value.empty())
-	{	
-		// rajouter le isdigit et d autre verif au cas ou 
-		std::cout << "Char : Non displayable" << std::endl;
-		return ;
-	}
-	char a = value[0];
-	if ((a >= '\t' && a <= '\r') || a == ' ')
-		std::cout << "Char : Non displayable" << std::endl;
-	else
-	{
-		std::cout << "Char : " << a << std::endl;
-	}
-}
-
-void	ScalarConverter::toInt(std::string value)
-{
-	if (value.empty())
-	{	
-		std::cout << "Char : Non displayable" << std::endl;
-		return ;
-	}
+	std::istringstream iss(value);
+	double s = 0.0;
+	iss >> s;
 	
+	std::cout << s << std::endl;
+	char t = static_cast<char>(s);
+	std::cout << t << std::endl;
 }
 
-// static void ScalarConverter::convert(std::string value)
-// {		
-
-// }
 
 
-
-THROUGHOUT
