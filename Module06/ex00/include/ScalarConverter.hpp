@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nadahman <nadahman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 10:02:20 by nadahman          #+#    #+#             */
-/*   Updated: 2025/10/09 11:50:35 by nadahman         ###   ########.fr       */
+/*   Updated: 2025/10/11 12:46:14 by nas              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,21 +23,16 @@ class ScalarConverter {
 	public :
 		static void	convert(std::string value);
 		
-		static void	toChar(std::string value);
-		static void	toInt(std::string value);
-		static void	toFloat(std::string value);
-		static void	toDouble(std::string value);
-		
+		static void	toChar(double d);
+		static void	toInt(double d);
+		static void	toFloat(double d);
+		static void	toDouble(double d);
+
+	private :
 		ScalarConverter();
 		ScalarConverter(const ScalarConverter& other);
 		ScalarConverter& operator=(const ScalarConverter& other);
 		~ScalarConverter();
-
-	private :
-		// ScalarConverter();
-		// ScalarConverter(const ScalarConverter& other);
-		// ScalarConverter& operator=(const ScalarConverter& other);
-		// ~ScalarConverter();
 };
 
 #endif

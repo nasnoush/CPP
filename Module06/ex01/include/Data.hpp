@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Data.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/07 10:02:24 by nadahman          #+#    #+#             */
-/*   Updated: 2025/10/11 12:48:46 by nas              ###   ########.fr       */
+/*   Created: 2025/10/11 12:58:27 by nas               #+#    #+#             */
+/*   Updated: 2025/10/11 13:42:45 by nas              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ScalarConverter.hpp"
+#ifndef DATA_HPP
+#define DATA_HPP
 
-int main (int ac, char **av)
-{	
-	if (ac != 2)
-	{	
-		std::cout << "Pas le bon nombre d'argument.." << std::endl;
- 		return 0;
-	}
-	ScalarConverter::convert(av[1]);
-	
-	return (0);
-}
+struct Data {
+
+   int x;
+   std::string test;
+};
+
+#endif

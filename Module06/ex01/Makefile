@@ -1,9 +1,9 @@
-NAME = convert
+NAME = ex01
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
 SRCS =  src/main.cpp \
-		src/ScalarConverter.cpp 
+		src/Serializer.cpp 
 OBJ = $(SRCS:.cpp=.o)
 
 all: $(NAME)
