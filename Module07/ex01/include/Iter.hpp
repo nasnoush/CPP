@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nadahman <nadahman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 10:50:46 by nadahman          #+#    #+#             */
-/*   Updated: 2025/10/13 13:28:07 by nadahman         ###   ########.fr       */
+/*   Updated: 2025/10/13 19:22:21 by nas              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 #include <iostream>
 
 template <typename T, typename F> 
-void iter(T* array, const int size, F function)
+void iter(T* array, const size_t size, F function)
 {
-    for (int i = 0; i < size; i++)
-        array[i] = function;
+    for (size_t i = 0; i < size; i++)
+        function(array[i]);
 }
 
 #endif
