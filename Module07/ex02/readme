@@ -1,0 +1,3 @@
+Fiche de suivi – Module Array Template
+✅ 1. Déclaration du template
+Déclarer la classe comme template générique <typename T>.
