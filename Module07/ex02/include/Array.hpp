@@ -6,7 +6,7 @@
 /*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 10:02:12 by nadahman          #+#    #+#             */
-/*   Updated: 2025/10/14 15:43:44 by nas              ###   ########.fr       */
+/*   Updated: 2025/10/15 08:30:56 by nas              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,6 @@ T& Array<T>::operator[](const unsigned int i)
 		throw BadRange();
 	else
 		return (_tab[i]);
-	
 }
 
 template <typename T> 

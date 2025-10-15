@@ -6,7 +6,7 @@
 /*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 10:01:11 by nadahman          #+#    #+#             */
-/*   Updated: 2025/10/14 15:52:14 by nas              ###   ########.fr       */
+/*   Updated: 2025/10/15 08:21:37 by nas              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,37 +14,33 @@
 #define MAX_VAL 750
 #define MAX_S 20
 
+
 int main(int, char **)
 {
-    Array<std::string> s[MAX_S];
-    std::string *mirr = new std::string[MAX_S];
-    srand(time(NULL));
-    
-    for (int i = 0; i < MAX_S; i++)
-    {
-        int j = 0;
-        std::string value = "test";
-        s[i][j] = value;
-        mirr[i] = value;
-    }
-    
-    {
-        int i = 0;
-        Array<std::string> tmp = s[i];
+   Array<std::string> s(MAX_S);
+   std::string *mirror = new std::string[MAX_S];
+   srand(time(NULL));
+   for (int i = 0; i < MAX_S; i++)
+   {
+        const char value = 'a';
+        s[i] = value;
+        mirror[i] = value;
+   }
+   {
+        Array<std::string> tmp = s;
         Array<std::string> test(tmp);
-    }
-    
+   }
     for (int i = 0; i < MAX_S; i++)
     {
-        int j = 0;
-        if (s[i][j] != mirr[i])
+        if (mirror[i] != s[i])
         {
             std::cerr << "didn't save the same value!!" << std::endl;
             return 1;
         }
+    }
     try
     {
-        s[4][j] = "ij";
+        s[2] = 'b';
     }
     catch(const std::exception& e)
     {
@@ -52,24 +48,100 @@ int main(int, char **)
     }
     try
     {
-        s[2][j] = "er";
+        s[MAX_S - 1] = 'c';
     }
     catch(const std::exception& e)
     {
         std::cerr << e.what() << '\n';
     }
-
     for (int i = 0; i < MAX_S; i++)
     {
-        s[i][j] = "ok";
+        s[i] = 'e';
     }
-    delete [] mirr;
+    try
+    {
+        s[MAX_S - 1] = 'c';
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    
+    for (int i = 0; i < MAX_S; i++)
+        std::cout << s[i] << std::endl;
+    std::cout << std::endl;    
+    for (int i = 0; i < MAX_S; i++)
+        std::cout << mirror[i] << std::endl;
+        
+    delete [] mirror;
     return 0;
     
-    }
 }
 
-// #define MAX_VAL 750
+// int main(int, char **)
+// {
+//    Array<char> caractere(MAX_S);
+//    char *mirror = new char[MAX_S];
+//    srand(time(NULL));
+//    for (int i = 0; i < MAX_S; i++)
+//    {
+//         const char value = 'a';
+//         caractere[i] = value;
+//         mirror[i] = value;
+//    }
+//    {
+//         Array<char> tmp = caractere;
+//         Array<char> test(tmp);
+//    }
+//     for (int i = 0; i < MAX_S; i++)
+//     {
+//         if (mirror[i] != caractere[i])
+//         {
+//             std::cerr << "didn't save the same value!!" << std::endl;
+//             return 1;
+//         }
+//     }
+//     try
+//     {
+//         caractere[2] = 'b';
+//     }
+//     catch(const std::exception& e)
+//     {
+//         std::cerr << e.what() << '\n';
+//     }
+//     try
+//     {
+//         caractere[MAX_S - 1] = 'c';
+//     }
+//     catch(const std::exception& e)
+//     {
+//         std::cerr << e.what() << '\n';
+//     }
+//     for (int i = 0; i < MAX_S; i++)
+//     {
+//         caractere[i] = 'e';
+//     }
+//     try
+//     {
+//         caractere[MAX_S - 1] = 'c';
+//     }
+//     catch(const std::exception& e)
+//     {
+//         std::cerr << e.what() << '\n';
+//     }
+    
+//     for (int i = 0; i < MAX_S; i++)
+//         std::cout << caractere[i] << std::endl;
+//     std::cout << std::endl;    
+//     for (int i = 0; i < MAX_S; i++)
+//         std::cout << mirror[i] << std::endl;
+        
+//     delete [] mirror;
+//     return 0;
+    
+// }
+
+
 // int main(int, char**)
 // {
 //     Array<int> numbers(MAX_VAL);
