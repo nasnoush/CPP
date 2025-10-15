@@ -6,7 +6,7 @@
 /*   By: nadahman <nadahman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 10:07:12 by nadahman          #+#    #+#             */
-/*   Updated: 2025/10/15 12:43:37 by nadahman         ###   ########.fr       */
+/*   Updated: 2025/10/15 13:01:01 by nadahman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 #include <algorithm> 
 #include <iostream>
 #include <vector>
+#include <list>
+#include <deque>
 
 // template <typename T>
 // typename T::iterator	easyfind(T &a, int i)
