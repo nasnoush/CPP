@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScalarConverter.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: nadahman <nadahman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 10:02:20 by nadahman          #+#    #+#             */
-/*   Updated: 2025/10/11 12:46:14 by nas              ###   ########.fr       */
+/*   Updated: 2025/10/13 09:58:06 by nadahman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <iostream>
 #include <sstream>
 #include <stdlib.h>
+#include <cmath>
+#include <limits.h>
 
 
 class ScalarConverter {
