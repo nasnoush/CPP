@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nadahman <nadahman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 10:54:37 by nas               #+#    #+#             */
-/*   Updated: 2025/10/13 10:02:13 by nadahman         ###   ########.fr       */
+/*   Updated: 2025/10/15 15:50:19 by nas              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 #include "ctime"
 #include "cstdlib"
 #include "iostream"
-#include <typeinfo>
 
 class Base {
 
