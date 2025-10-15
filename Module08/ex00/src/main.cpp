@@ -6,7 +6,7 @@
 /*   By: nadahman <nadahman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 10:23:59 by nadahman          #+#    #+#             */
-/*   Updated: 2025/10/15 11:59:19 by nadahman         ###   ########.fr       */
+/*   Updated: 2025/10/15 12:43:46 by nadahman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int main()
 		v.push_back(20);
 		v.push_back(30);
 		v.push_back(40);
+		
 		easyfind(v, a);
 		std::cout << std::endl;
 		v.pop_back();
