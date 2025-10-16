@@ -6,7 +6,7 @@
 /*   By: nadahman <nadahman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 10:07:12 by nadahman          #+#    #+#             */
-/*   Updated: 2025/10/15 13:01:01 by nadahman         ###   ########.fr       */
+/*   Updated: 2025/10/16 13:52:41 by nadahman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,6 @@
 #include <list>
 #include <deque>
 
-// template <typename T>
-// typename T::iterator	easyfind(T &a, int i)
-// {
-// 	for (typename T::iterator j = 0; j < a.size(); j++)
-// 	{
-// 		if (a[j] == i)
-// 		{	
-// 			std::cout << "Trouvé a la " << j << "e place.." << std::endl;
-// 			return j;
-// 		}
-// 	}
-// 	throw std::logic_error("Aucune occurence trouvée");
-// }
 
 template <typename T>
 typename T::iterator	easyfind(T &a, int i)

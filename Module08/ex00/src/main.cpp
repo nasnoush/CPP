@@ -6,7 +6,7 @@
 /*   By: nadahman <nadahman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 10:23:59 by nadahman          #+#    #+#             */
-/*   Updated: 2025/10/15 13:02:52 by nadahman         ###   ########.fr       */
+/*   Updated: 2025/10/16 13:55:15 by nadahman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int main()
 	
 	std::cout << std::endl;
 	std::cout << "Test avec list et deque :" << std::endl;
-		try
+	try
 	{
 		int i = 20;
 		std::list<int> pile;
