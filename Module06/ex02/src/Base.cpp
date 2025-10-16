@@ -6,7 +6,7 @@
 /*   By: nadahman <nadahman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/12 11:00:01 by nas               #+#    #+#             */
-/*   Updated: 2025/10/15 13:36:36 by nadahman         ###   ########.fr       */
+/*   Updated: 2025/10/16 10:23:52 by nadahman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void Base::identify(Base& p)
         std::cout << "p : A" << std::endl;
         return;
     }
-    catch(const std::bad_cast&) {}
+    catch(...) {}
 
     try
     {
@@ -55,7 +55,7 @@ void Base::identify(Base& p)
         std::cout << "p : B" << std::endl;
         return;
     }
-    catch(const std::bad_cast&) {}
+    catch(...) {}
 
     try
     {
@@ -63,5 +63,6 @@ void Base::identify(Base& p)
         std::cout << "p : C" << std::endl;
         return;
     }
-    catch(const std::bad_cast&) {}
+    catch(...) {}
+
 }
