@@ -6,7 +6,7 @@
 /*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 10:02:12 by nadahman          #+#    #+#             */
-/*   Updated: 2025/10/15 08:30:56 by nas              ###   ########.fr       */
+/*   Updated: 2025/10/19 12:35:49 by nas              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ template <typename T> class Array {
 		Array(const Array& other);
 		Array& operator=(const Array& other);
 		T& operator[](const unsigned int i);
+		const T& operator[](const unsigned int i) const;
+
 		~Array();
 		
 		unsigned int size() const;
@@ -67,6 +69,15 @@ Array<T>::Array(const Array& other)
 
 template <typename T> 
 T& Array<T>::operator[](const unsigned int i)
+{
+	if (i >= _size)
+		throw BadRange();
+	else
+		return (_tab[i]);
+}
+
+template <typename T> 
+const T& Array<T>::operator[](const unsigned int i) const
 {
 	if (i >= _size)
 		throw BadRange();
