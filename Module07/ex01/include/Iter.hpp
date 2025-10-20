@@ -6,7 +6,7 @@
 /*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 10:50:46 by nadahman          #+#    #+#             */
-/*   Updated: 2025/10/19 12:11:25 by nas              ###   ########.fr       */
+/*   Updated: 2025/10/20 08:31:44 by nas              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@
 
 
 template<typename T>
-void	iter(T *array, size_t size, void (*function)(T &e))
+void	iter(T *array, const size_t size, void (*function)(T &e))
 {
 	for(size_t i = 0; i < size; i++)
 		function(array[i]);
 }
 
 template<typename T>
-void	iter(const T *array, size_t size, void (*function)(const T &e))
+void	iter(const T *array, const size_t size, void (*function)(const T &e))
 {
 	for(size_t i = 0; i < size; i++)
 		function(array[i]);
