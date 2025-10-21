@@ -13,20 +13,23 @@ Span::Span(unsigned int n)
 
 Span::Span(const Span& other)
 {
-	_tab = _tab[other._size];
-	for (int i = 0; i < _size; i++)
-		_tab[i] = other._tab[i];
+	_tab = other._tab;
+	_size = other._size;
 }
 
 Span& Span::operator=(const Span &other)
 {
 	if (this != &other)
 	{
-		_tab = _tab[other._size];
-		for (int i = 0; i < _size; i++)
-			_tab[i] = other._tab[i];
+		_tab = other._tab;
+		_size = other._size;
 	}
 	return (*this);
+}
+
+Span Span::operator[](int index)
+{
+	return (_tab[index]);
 }
 
 Span::~Span()
@@ -34,11 +37,27 @@ Span::~Span()
 
 }
 
-void Span::addNumber(int x) const
+int Span::getSize() const
 {
-	// mettre condition ici pour throw si j essaye d ajouter mais que je depasse size
-	if ()
+	return _size;
+}
+
+std::vector<int> Span::getTab() const
+{
+	return _tab;
+}
+
+void Span::addNumber(int x) 
+{
+	if (_tab.size() < _size)
 		_tab.push_back(x);
 	else
 		throw VecTooSmall();
+}
+
+std::ostream& operator<<(std::ostream& f, const Span& s)
+{
+	for (int i = 0; i < s.getSize(); i++)
+		f << s.getTab()[i] << " ";
+	return f;
 }

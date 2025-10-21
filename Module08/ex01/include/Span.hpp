@@ -10,19 +10,25 @@ class Span {
 		Span(unsigned int n);
 		Span(const Span& other);
 		Span& operator=(const Span& other);
+		Span operator[](int index);
 		~Span();
 
-		void addNumber() const;
+		void addNumber(int x);
 
-		class VecTooSmall() : public std::exception {
-			const char *what() throw { return "Exception : Vector too small for add a new number !";}
+		int getSize() const;
+		std::vector<int> getTab() const;
+
+		class VecTooSmall : public std::exception {
+			const char *what() const throw() { return "Exception : Vector too small for add a new number !";}
 		};
 
 	private :
 		Span();
 		std::vector<int> _tab;
-		int _size;
+		unsigned int _size;
 
 };
+
+std::ostream& operator<<(std::ostream& f, const Span& s);
 
 #endif 
