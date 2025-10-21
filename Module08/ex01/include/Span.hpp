@@ -13,13 +13,20 @@ class Span {
 		Span operator[](int index);
 		~Span();
 
-		void addNumber(int x);
-
 		int getSize() const;
 		std::vector<int> getTab() const;
 
+		void addNumber(int x);
+
+		void shortestSpan();
+		void longestSpan();
+
 		class VecTooSmall : public std::exception {
 			const char *what() const throw() { return "Exception : Vector too small for add a new number !";}
+		};
+
+		class WrongSize : public std::exception {
+			const char *what() const throw() { return "Exception : Problem with the size of the vector  !";}
 		};
 
 	private :

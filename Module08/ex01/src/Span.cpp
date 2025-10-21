@@ -55,6 +55,30 @@ void Span::addNumber(int x)
 		throw VecTooSmall();
 }
 
+void Span::shortestSpan()
+{
+	int min = getTab()[0] - getTab()[1];
+	int j = 1;
+	if (getSize() < 2)
+		throw WrongSize();
+	else
+	{		
+		for (int i = 0; i < getSize(); i++)
+		{
+			if (getTab()[i] - getTab()[j] < min)
+				min = getTab()[i] - getTab()[j];
+			else
+				j++
+		}
+		std::cout << min << std::endl;
+	}
+}
+
+void Span::longestSpan()
+{
+
+}
+
 std::ostream& operator<<(std::ostream& f, const Span& s)
 {
 	for (int i = 0; i < s.getSize(); i++)
