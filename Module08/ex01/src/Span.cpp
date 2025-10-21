@@ -57,18 +57,20 @@ void Span::addNumber(int x)
 
 void Span::shortestSpan()
 {
-	int min = getTab()[0] - getTab()[1];
-	int j = 1;
+	int min = std::abs(getTab()[0] - getTab()[1]);
 	if (getSize() < 2)
 		throw WrongSize();
 	else
 	{		
 		for (int i = 0; i < getSize(); i++)
 		{
-			if (getTab()[i] - getTab()[j] < min)
-				min = getTab()[i] - getTab()[j];
-			else
-				j++
+			for (int j = i + 1; j < getSize(); j++)
+			{
+				if (std::abs(getTab()[i] - getTab()[j]) < min)
+					min = std::abs(getTab()[i] - getTab()[j]);
+				else
+					continue;
+			}
 		}
 		std::cout << min << std::endl;
 	}
