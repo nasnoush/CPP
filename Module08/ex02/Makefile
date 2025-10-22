@@ -1,9 +1,8 @@
-NAME = ex01
+NAME = ex02
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
 SRCS =  src/main.cpp \
-		src/Span.cpp \
 
 OBJ = $(SRCS:.cpp=.o)
 
