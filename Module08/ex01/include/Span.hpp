@@ -3,6 +3,9 @@
 
 #include <vector>
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <iterator>
 
 class Span {
 
@@ -10,11 +13,10 @@ class Span {
 		Span(unsigned int n);
 		Span(const Span& other);
 		Span& operator=(const Span& other);
-		Span operator[](int index);
 		~Span();
 
 		int getSize() const;
-		std::vector<int> getTab() const;
+		const std::vector<int>& getTab() const;
 
 		void addNumber(int x);
 		void addMultNbr(int nb);

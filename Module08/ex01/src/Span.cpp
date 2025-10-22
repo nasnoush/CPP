@@ -8,7 +8,6 @@ Span::Span()
 Span::Span(unsigned int n)
 {
 	_size = n;
-	_tab[_size];
 }
 
 Span::Span(const Span& other)
@@ -27,11 +26,6 @@ Span& Span::operator=(const Span &other)
 	return (*this);
 }
 
-Span Span::operator[](int index)
-{
-	return (_tab[index]);
-}
-
 Span::~Span()
 {
 
@@ -42,9 +36,9 @@ int Span::getSize() const
 	return _size;
 }
 
-std::vector<int> Span::getTab() const
+const std::vector<int>& Span::getTab() const
 {
-	return _tab;
+	return (_tab);
 }
 
 void Span::addNumber(int x) 
@@ -57,14 +51,15 @@ void Span::addNumber(int x)
 
 int Span::shortestSpan()
 {
+
 	int min = std::abs(getTab()[0] - getTab()[1]);
-	if (getSize() < 2)
-		throw WrongSize();
+	if (_tab.size() < 2)
+		throw EmptyStore();
 	else
 	{		
-		for (int i = 0; i < getSize(); i++)
+		for (unsigned int i = 0; i < _tab.size(); i++)
 		{
-			for (int j = i + 1; j < getSize(); j++)
+			for (unsigned int j = i + 1; j < _tab.size(); j++)
 			{
 				if (std::abs(getTab()[i] - getTab()[j]) < min)
 					min = std::abs(getTab()[i] - getTab()[j]);
@@ -79,13 +74,13 @@ int Span::shortestSpan()
 int Span::longestSpan()
 {
 	int max = std::abs(getTab()[0] - getTab()[1]);
-	if (getSize() < 2)
-		throw WrongSize();
+	if (_tab.size() < 2)
+		throw EmptyStore();
 	else
 	{		
-		for (int i = 0; i < getSize(); i++)
+		for (unsigned int i = 0; i < _tab.size(); i++)
 		{
-			for (int j = i + 1; j < getSize(); j++)
+			for (unsigned int j = i + 1; j < _tab.size(); j++)
 			{
 				if (std::abs(getTab()[i] - getTab()[j]) > max)
 					max = std::abs(getTab()[i] - getTab()[j]);
@@ -97,27 +92,18 @@ int Span::longestSpan()
 	}
 }
 
-void Span::addMultNbr(int nb)
-{
-	if (nb < 2)
-		throw EmptyStore();
-	else
-	{
-		for (int i = 0; i < nb; i++)
-			addNumber()
-	}
-}
-
-// std::ostream& operator<<(std::ostream& f, const Span& s)
-// {
-// 	for (int i = 0; i < s.getSize(); i++)
-// 		f << s.getTab()[i] << " ";
-// 	return f;
-// }
-
 std::ostream& operator<<(std::ostream& f, const Span& s)
 {
-	f << s.getSize();
-
+	for (unsigned int i = 0; i < s.getTab().size(); i++)
+		f << s.getTab()[i] << " ";
 	return f;
+}
+
+void Span::addMultNbr(int nb)
+{
+	if (nb > getSize())
+		throw VecTooSmall();
+	else
+		for (int i = 0; i < nb; i++)
+			addNumber(rand() % 100);
 }
