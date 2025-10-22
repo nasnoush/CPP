@@ -17,9 +17,10 @@ class Span {
 		std::vector<int> getTab() const;
 
 		void addNumber(int x);
+		void addMultNbr(int nb);
 
-		void shortestSpan();
-		void longestSpan();
+		int shortestSpan();
+		int longestSpan();
 
 		class VecTooSmall : public std::exception {
 			const char *what() const throw() { return "Exception : Vector too small for add a new number !";}
@@ -27,6 +28,10 @@ class Span {
 
 		class WrongSize : public std::exception {
 			const char *what() const throw() { return "Exception : Problem with the size of the vector  !";}
+		};
+
+		class EmptyStore : public std::exception {
+			const char *what() const throw() { return "Exception : Number stored lower to 2 !";}
 		};
 
 	private :

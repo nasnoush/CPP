@@ -55,7 +55,7 @@ void Span::addNumber(int x)
 		throw VecTooSmall();
 }
 
-void Span::shortestSpan()
+int Span::shortestSpan()
 {
 	int min = std::abs(getTab()[0] - getTab()[1]);
 	if (getSize() < 2)
@@ -72,18 +72,52 @@ void Span::shortestSpan()
 					continue;
 			}
 		}
-		std::cout << min << std::endl;
+		return (min);
 	}
 }
 
-void Span::longestSpan()
+int Span::longestSpan()
 {
-
+	int max = std::abs(getTab()[0] - getTab()[1]);
+	if (getSize() < 2)
+		throw WrongSize();
+	else
+	{		
+		for (int i = 0; i < getSize(); i++)
+		{
+			for (int j = i + 1; j < getSize(); j++)
+			{
+				if (std::abs(getTab()[i] - getTab()[j]) > max)
+					max = std::abs(getTab()[i] - getTab()[j]);
+				else
+					continue;
+			}
+		}
+		return (max);
+	}
 }
+
+void Span::addMultNbr(int nb)
+{
+	if (nb < 2)
+		throw EmptyStore();
+	else
+	{
+		for (int i = 0; i < nb; i++)
+			addNumber()
+	}
+}
+
+// std::ostream& operator<<(std::ostream& f, const Span& s)
+// {
+// 	for (int i = 0; i < s.getSize(); i++)
+// 		f << s.getTab()[i] << " ";
+// 	return f;
+// }
 
 std::ostream& operator<<(std::ostream& f, const Span& s)
 {
-	for (int i = 0; i < s.getSize(); i++)
-		f << s.getTab()[i] << " ";
+	f << s.getSize();
+
 	return f;
 }

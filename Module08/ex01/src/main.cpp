@@ -6,7 +6,7 @@
 /*   By: nas <nas@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 13:59:55 by nadahman          #+#    #+#             */
-/*   Updated: 2025/10/21 15:23:23 by nas              ###   ########.fr       */
+/*   Updated: 2025/10/22 08:25:08 by nas              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,15 @@ int main()
 {
     Span sp = Span(5);
     
+    // mettre la condition pour si la span est vide et throw
     sp.addNumber(6);
     sp.addNumber(3);
     sp.addNumber(17);
     sp.addNumber(9);
     sp.addNumber(11);
 
-    sp.shortestSpan();
-    // sp.longestSpan();
+    std::cout << sp.shortestSpan() << std::endl;
+    std::cout << sp.longestSpan() << std::endl;;
     
     return (0);
 }
