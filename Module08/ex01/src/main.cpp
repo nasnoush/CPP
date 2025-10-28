@@ -6,7 +6,7 @@
 /*   By: nadahman <nadahman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 13:59:55 by nadahman          #+#    #+#             */
-/*   Updated: 2025/10/22 12:57:20 by nadahman         ###   ########.fr       */
+/*   Updated: 2025/10/28 11:30:31 by nadahman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main()
     try
     {
         srand(time(0));
-        Span sp = Span(10);
+        Span sp = Span(15);
     
 
         // sp.addNumber(6);

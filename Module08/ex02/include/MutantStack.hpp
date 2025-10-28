@@ -4,13 +4,18 @@
 #include <stack>
 #include <iostream>
 
-class MutantStack {
+template <typename T> 
+class MutantStack : public std::stack<T> {
 
 	public :
 		MutantStack();
 		MutantStack(const MutantStack& other);
 		MutantStack& operator=(const MutantStack& other);
 		~MutantStack();
+
+
+		 begin() ;
+		 end() ;
 
 	private :
 };

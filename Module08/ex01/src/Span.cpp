@@ -107,3 +107,26 @@ void Span::addMultNbr(int nb)
 		for (int i = 0; i < nb; i++)
 			addNumber(rand() % 100);
 }
+
+// void Span::addMultNbr(int nb) // version avec nombre unique
+// {
+// 	unsigned int d;
+// 	if (nb > getSize())
+// 		throw VecTooSmall();
+// 	else
+// 		for (int i = 0; i < nb; i++)
+// 		{	
+// 			d = 0;
+// 			int r = rand() % 100;
+// 			while (d < _tab.size())
+// 			{	
+// 				if (_tab[d] == r)
+// 				{	
+// 					d = 0;
+// 					r = (rand() % 100000);
+// 				}
+// 				d++;
+// 			}
+// 			addNumber(r);
+// 		}
+// }
