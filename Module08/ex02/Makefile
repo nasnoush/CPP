@@ -6,10 +6,14 @@ SRCS =  src/main.cpp \
 
 OBJ = $(SRCS:.cpp=.o)
 
+GREEN  = \033[0;32m
+
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
+	@echo "$(GREEN)✅ Compilation terminée !$(RESET)"
+
 
 %.o: %.cpp
 	$(CC) $(FLAGS) -O3 -c $< -o $@
