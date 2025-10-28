@@ -10,7 +10,7 @@ class MutantStack : public std::stack<T> {
 
 	public :
 
-		typedef std::deque<T>::iterator it;
+		typedef typename std::deque<T>::iterator it;
 
 		it begin();
 		it end();
@@ -52,12 +52,13 @@ MutantStack<T>::~MutantStack()
 
 }
 template <typename T>
-MutantStack<T>::it begin()
+typename MutantStack<T>::it MutantStack<T>::begin()
 {
 	return (this->c.begin());
 }
 template <typename T>
-MutantStack<T>::it end()
+typename MutantStack<T>::it MutantStack<T>::end()
+
 {
 	return (this->c.end());
 }

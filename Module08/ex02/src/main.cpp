@@ -31,6 +31,14 @@ int main()
 	for (MutantStack<int>::it it = stack.begin(); it != stack.end(); ++it)
 		std::cout << *it << std::endl;
 
+	stack.pop();
+	std::cout << std::endl;
+	
+	for (MutantStack<int>::it it = stack.begin(); it != stack.end(); ++it)
+		std::cout << *it << std::endl;
+
+
+
 	return (0);
 
 }
