@@ -10,12 +10,15 @@ class MutantStack : public std::stack<T> {
 
 	public :
 
-		typedef typename std::deque<T>::iterator it;
+		typedef typename std::stack<T>::container_type::iterator iterator;
+		typedef typename std::stack<T>::container_type::const_iterator const_iterator;
 
-		it begin();
-		it end();
-		// it begin() const;
-		// it end() const;
+
+
+		iterator begin();
+		iterator end();
+		const_iterator begin() const;
+		const_iterator end() const;
 
 
 		MutantStack();
@@ -52,26 +55,28 @@ MutantStack<T>::~MutantStack()
 
 }
 template <typename T>
-typename MutantStack<T>::it MutantStack<T>::begin()
+typename MutantStack<T>::iterator MutantStack<T>::begin()
 {
 	return (this->c.begin());
 }
 template <typename T>
-typename MutantStack<T>::it MutantStack<T>::end()
+typename MutantStack<T>::iterator MutantStack<T>::end()
 
 {
 	return (this->c.end());
 }
 
-// template <typename T>
-// it MutantStack<T>::begin() const
-// {
-// 	return (c.begin());
-// }
-// template <typename T>
-// it MutantStack<T>::end() const
-// {
-// 	return (c.end());
-// }
+template <typename T>
+typename MutantStack<T>::const_iterator MutantStack<T>::begin() const 
+{ 
+	return this->c.begin(); 
+}
+
+template <typename T>
+typename MutantStack<T>::const_iterator MutantStack<T>::end() const 
+{ 
+	return this->c.end(); 
+}
+
 
 #endif

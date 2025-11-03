@@ -12,7 +12,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
-	@echo "$(GREEN)✅ Compilation terminée !$(RESET)"
+	@echo "$(GREEN)✅ Compilation réussie !$(RESET)"
 
 
 %.o: %.cpp
