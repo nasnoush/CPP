@@ -49,25 +49,49 @@
 // 	return (0);
 // }
 
+// int main()
+// {
+//     std::list<int> mlist;
+
+//     mlist.push_back(5); 
+//     mlist.push_back(17);
+//     std::cout << mlist.back() << std::endl;
+//     mlist.pop_back();
+//     std::cout << mlist.size() << std::endl;
+    
+//     mlist.push_back(3);
+//     mlist.push_back(5);
+//     mlist.push_back(737);
+//     mlist.push_back(0);
+
+//     std::list<int>::iterator it = mlist.begin();
+//     std::list<int>::iterator ite = mlist.end();
+//     ++it;
+//     --it;
+
+//     while (it != ite)
+//     {
+//         std::cout << *it << std::endl;
+//         ++it;
+//     }
+
+//     std::list<int> s(mlist);
+//     return 0;
+// }
+
+// version const
+
 int main()
 {
-    std::list<int> mlist;
+    MutantStack<int> mstack;
+    mstack.push(10);
+    mstack.push(20);
+    mstack.push(30);
 
-    mlist.push_back(5); 
-    mlist.push_back(17);
-    std::cout << mlist.back() << std::endl;
-    mlist.pop_back();
-    std::cout << mlist.size() << std::endl;
-    
-    mlist.push_back(3);
-    mlist.push_back(5);
-    mlist.push_back(737);
-    mlist.push_back(0);
+    const MutantStack<int> cstack = mstack;
 
-    std::list<int>::iterator it = mlist.begin();
-    std::list<int>::iterator ite = mlist.end();
-    ++it;
-    --it;
+    MutantStack<int>::const_iterator it = cstack.begin();
+    MutantStack<int>::const_iterator ite = cstack.end();
 
     while (it != ite)
     {
@@ -75,6 +99,6 @@ int main()
         ++it;
     }
 
-    std::list<int> s(mlist);
+
     return 0;
 }
