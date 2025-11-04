@@ -2,12 +2,12 @@
 
 void BitcoinExchange::extractInfo(std::string file)
 {
-	file = "2001-08-19 | 59";
+	std::ifstream f(file);
+
 	std::string tmp;
 
-	std::stringstream ss(file);
+	while (std::getline(f, tmp))
+		std::cout << tmp;
 
-
-	while (std::getline(ss, tmp, '|'))
-		std::cout << tmp << std::endl;
+	f.close();
 }
