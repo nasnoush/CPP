@@ -2,6 +2,7 @@
 
 int main(int ac, char **av)
 {
+	(void)av;
 	if (ac != 2)
 	{
 		std::cout << "Error: could not open file." << std::endl;
@@ -10,7 +11,8 @@ int main(int ac, char **av)
 
 	BitcoinExchange btc;
 
-	btc.extractInfo(av[1]);
+	btc.extractInfo("data.csv");
+	btc.applyChange(av[1]);
 
 	return (0);
 }

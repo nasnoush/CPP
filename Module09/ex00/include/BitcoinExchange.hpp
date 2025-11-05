@@ -17,12 +17,16 @@ class BitcoinExchange {
 		~BitcoinExchange();
 
 		void extractInfo(std::string file);
-		void addInfo();
+		void applyChange(std::string input);
 
 	private:
 		std::string _date;
 		float	_valueofbtc;
 		std::map<std::string, float> _tab;
+
+		std::vector<std::pair<std::string, float> > _inputTab;
+		std::string _inputDate;
+		float _inputValue;
 };
 
 
