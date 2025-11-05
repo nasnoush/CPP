@@ -2,6 +2,7 @@
 #define BITCOINEXCHANGE_HPP
 
 #include <iostream>
+#include <iomanip>
 #include <sstream>
 #include <string> 
 #include <fstream>
@@ -16,8 +17,7 @@ class BitcoinExchange {
 		~BitcoinExchange();
 
 		void extractInfo(std::string file);
-		
-
+		void addInfo();
 
 	private:
 		std::string _date;

@@ -30,15 +30,32 @@ BitcoinExchange::~BitcoinExchange()
 
 void BitcoinExchange::extractInfo(std::string file)
 {
-	std::ifstream f(file);
+	std::ifstream f(file.c_str());
 
 	std::string tmp;
+	std::string del = ",";
+	std::string price;
 
 	while (std::getline(f, tmp))
-		std::cout << tmp << std::endl;
+	{
+		unsigned long pos = tmp.find(del);
 
+		while (pos != std::string::npos)
+		{
+			_date = tmp.substr(0, pos);
+			tmp.erase(0, pos + del.length());
+			price = tmp.substr(0, '\n');
+			std::istringstream iss(price);
+			iss >> _valueofbtc;
+			pos = tmp.find(del);
+		}
+		
+		_tab[_date] = _valueofbtc;
+	}
+	// std::cout << _tab["2017-12-16"] << std::endl;
 	f.close();
 }
+
 
 // split chaque element et les mettres dans les variables correspondante
 // puis les ajouter dans la std::map avec une fonction de push
