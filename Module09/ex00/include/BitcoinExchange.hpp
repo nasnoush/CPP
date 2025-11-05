@@ -5,24 +5,24 @@
 #include <sstream>
 #include <string> 
 #include <fstream>
+#include <map>
 
 class BitcoinExchange {
 
 	public:
-		// BitcoinExchange();
-		// BitcoinExchange(const BitcoinExchange &other);
-		// BitcoinExchange& operator=(const BitcoinExchange& other);
-		// ~BitcoinExchange();
+		BitcoinExchange();
+		BitcoinExchange(const BitcoinExchange &other);
+		BitcoinExchange& operator=(const BitcoinExchange& other);
+		~BitcoinExchange();
 
 		void extractInfo(std::string file);
 		
 
 
 	private:
-		// std::string _date;
-		// float	_value;
-		// float _nbrofbtc;
-		// std::vector<int> _tabofprice;
+		std::string _date;
+		float	_valueofbtc;
+		std::map<std::string, float> _tab;
 };
 
 
