@@ -4,13 +4,13 @@ BitcoinExchange::BitcoinExchange()
 {
 	_valueofbtc = 0.0;
 	_date = "";
-
 }
 
 BitcoinExchange::BitcoinExchange(const BitcoinExchange& other)
 {
 	_valueofbtc = other._valueofbtc;
 	_date = other._date;
+	// faire deepcopy des tableaux
 }
 
 BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& other)
@@ -19,6 +19,7 @@ BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& other)
 	{
 		_valueofbtc = other._valueofbtc;
 		_date = other._date;
+		// faire deepcopy des tableaux
 	}
 	return (*this);
 }
@@ -40,14 +41,13 @@ void BitcoinExchange::extractInfo(std::string file)
 	{
 		unsigned long pos = tmp.find(del);
 
-		while (pos != std::string::npos)
+		if (pos != std::string::npos)
 		{
 			_date = tmp.substr(0, pos);
 			tmp.erase(0, pos + del.length());
-			price = tmp.substr(0, '\n');
+			price = tmp.substr(0);
 			std::istringstream iss(price);
 			iss >> _valueofbtc;
-			pos = tmp.find(del);
 		}
 		
 		_tab[_date] = _valueofbtc;
@@ -66,14 +66,13 @@ void BitcoinExchange::applyChange(std::string input)
 	while (getline(f, tmp))
 	{
 		unsigned long pos = tmp.find(del);
-		while (pos != std::string::npos)
+		if (pos != std::string::npos)
 		{
 			_inputDate = tmp.substr(0, pos);
 			tmp.erase(0, pos + del.length());
-			price = tmp.substr(0, '\n');
+			price = tmp.substr(0);
 			std::istringstream iss(price);
 			iss >> _inputValue;
-			pos = tmp.find(del);
 		}
 
 		// mettre les verifs ici normalement
@@ -81,15 +80,14 @@ void BitcoinExchange::applyChange(std::string input)
 		// - float positif entre 0 et 1000
 		// - 
 
-		_inputTab[0].first = _inputDate;
-		_inputTab[0].second = _inputValue;
+		_inputTab.push_back(std::make_pair(_inputDate, _inputValue));
 
-		std::cout << _inputTab[0].first << std::endl;
+		std::cout << _inputTab.back().first << std::endl;
 	}
 	f.close();
 }
 
 
-// split chaque element et les mettres dans les variables correspondante
-// puis les ajouter dans la std::map avec une fonction de push
+
 // faire toutes les verifs possible
+// tej les espaces de ce que je viens de split pour les comparer
