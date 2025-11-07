@@ -18,6 +18,7 @@ class BitcoinExchange {
 
 		void extractInfo(std::string file);
 		void applyChange(std::string input);
+		bool isValideDate(std::string date);
 
 	private:
 		std::string _date;
