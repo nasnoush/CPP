@@ -14,7 +14,8 @@ BitcoinExchange::BitcoinExchange(const BitcoinExchange& other)
 	_date = other._date;
 	_inputDate = other._inputDate;
 	_inputValue = other._inputValue;
-	// faire deepcopy des tableaux
+	_tab = other._tab;
+	_inputTab = other._inputTab;
 }
 
 BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& other)
@@ -25,7 +26,8 @@ BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& other)
 		_date = other._date;
 		_inputDate = other._inputDate;
 		_inputValue = other._inputValue;
-		// faire deepcopy des tableaux
+		_tab = other._tab;
+		_inputTab = other._inputTab;
 	}
 	return (*this);
 }
@@ -63,13 +65,24 @@ void BitcoinExchange::extractInfo(std::string file)
 			iss >> _valueofbtc;
 			_tab[_date] = _valueofbtc;
 		}
-		
 	}
 	f.close();
 }
 
 bool BitcoinExchange::isValideDate(std::string date)
 {
+	int year = atoi(date.substr(0, 4).c_str());
+	int month = atoi(date.substr(5, 2).c_str());
+	int day = atoi(date.substr(8, 2).c_str());
+
+	if (date.size() != 10)
+		return false;
+	if (month < 1 || month > 12)
+		return false;
+	if (day < 1 || day > 31)
+		return false;
+	if (year < 2009)
+		return false;
 	for (int i = 0; i < 10; i++)
 	{
 		if (i == 4 || i == 7)
@@ -109,7 +122,7 @@ void BitcoinExchange::applyChange(std::string input)
 			continue;
 		if (tmp.find(del) == std::string::npos)
 		{
-			std::cout << "Error: bad input '|' in this date => " << tmp << std::endl;
+			std::cout << "Error: bad input => " << tmp << std::endl;
 			continue;
 		}
 		unsigned long pos = tmp.find(del);
@@ -149,6 +162,8 @@ void BitcoinExchange::applyChange(std::string input)
 		_inputTab.push_back(std::make_pair(_inputDate, _inputValue));
 
 
+		if (_tab.empty())
+    		continue;
 		std::map<std::string, float>::iterator it = _tab.lower_bound(_inputDate);
 		if (it != _tab.end() && it->first == _inputDate)
 				std::cout << _inputDate << " => " << _inputValue << " = " << it->second * _inputValue << std::endl;
@@ -165,6 +180,3 @@ void BitcoinExchange::applyChange(std::string input)
 	}
 	f.close();
 }
-
-// A PAS OUBLIER
-// - bon format de la date
