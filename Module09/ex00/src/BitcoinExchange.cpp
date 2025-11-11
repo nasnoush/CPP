@@ -122,7 +122,7 @@ void BitcoinExchange::applyChange(std::string input)
 			continue;
 		if (tmp.find(del) == std::string::npos)
 		{
-			std::cout << "Error: bad input => " << tmp << std::endl;
+			std::cerr << "Error: bad input => " << tmp << std::endl;
 			continue;
 		}
 		unsigned long pos = tmp.find(del);
@@ -133,7 +133,7 @@ void BitcoinExchange::applyChange(std::string input)
 			_inputDate.erase(_inputDate.find_last_not_of(" \t") + 1);
 			if (!isValideDate(_inputDate) || _inputDate.size() != 10)
 			{
-				std::cout << "Error: bad input => " << _inputDate << std::endl;
+				std::cerr << "Error: bad input => " << _inputDate << std::endl;
     			continue;
 			}
 			tmp.erase(0, pos + del.length());
@@ -142,7 +142,7 @@ void BitcoinExchange::applyChange(std::string input)
 			price.erase(price.find_last_not_of(" \t") + 1);
 			if (price.empty())
 			{
-				std::cout << "Error: bad input price in this date => " << _inputDate << std::endl;
+				std::cerr << "Error: bad input price in this date => " << _inputDate << std::endl;
 				continue;
 			}
 			std::istringstream iss(price);
@@ -151,12 +151,12 @@ void BitcoinExchange::applyChange(std::string input)
 
 		if (_inputValue < 0)
 		{
-			std::cout << "Error: not a positive number." << std::endl;
+			std::cerr << "Error: not a positive number." << std::endl;
 			continue;
 		}
 		if (_inputValue > 1000)
 		{
-			std::cout << "Error: too large a number." << std::endl;
+			std::cerr << "Error: too large a number." << std::endl;
 			continue;
 		}
 		_inputTab.push_back(std::make_pair(_inputDate, _inputValue));

@@ -1,9 +1,9 @@
-NAME = ex01
+NAME = RPN
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
 SRCS =  src/main.cpp \
-		src/BitcoinExchange.cpp \
+		src/RPN.cpp \
 
 OBJ = $(SRCS:.cpp=.o)
 
