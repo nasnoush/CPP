@@ -46,11 +46,11 @@ void RPN::parseString(std::string input)
     {
         if (input[i] == ' ')
             continue;
-        // if (i == 0 && (input[i] == '+' || input[i] == '-' || input[i] == '/' || input[i] == '*'))
-        // {
-        //     std::cerr << "Error: operator at the begin and before numbers !" << std::endl;
-        //     return;
-        // }
+        if ((input[i] == '+' || input[i] == '-') && i + 1 < input.size() && isdigit(input[i + 1]))
+        {
+            std::cerr << "Error: invalid syntax !" << std::endl;
+            return;
+        }
         if (isdigit(input[i]))
         {
             if (i + 1 < input.size() && isdigit(input[i + 1]))
@@ -61,7 +61,7 @@ void RPN::parseString(std::string input)
             else
                 _stack.push(input[i] - '0');
         }
-        else if ((input[i] == '+' || input[i] == '-' || input[i] == '/' || input[i] == '*') && input[i - 1] == ' ')
+        else if (i > 0 && (input[i] == '+' || input[i] == '-' || input[i] == '/' || input[i] == '*') && input[i - 1] == ' ')
         {
             if (i == 0 || (!isspace(input[i - 1]) && !isdigit(input[i - 1])) || (i + 1 < input.size() && !isspace(input[i + 1]) && !isdigit(input[i + 1])))
             {
@@ -108,5 +108,4 @@ void RPN::parseString(std::string input)
     }
 }
 
-
-// segfault si j utilise un signe au debut, check la condition d acces je depasse surement 
+// tester la division par 0

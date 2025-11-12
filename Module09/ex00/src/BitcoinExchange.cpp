@@ -159,11 +159,13 @@ void BitcoinExchange::applyChange(std::string input)
 			std::cerr << "Error: too large a number." << std::endl;
 			continue;
 		}
-		_inputTab.push_back(std::make_pair(_inputDate, _inputValue));
+
+		_inputTab[_inputDate] = _inputValue;
 
 
 		if (_tab.empty())
     		continue;
+	
 		std::map<std::string, float>::iterator it = _tab.lower_bound(_inputDate);
 		if (it != _tab.end() && it->first == _inputDate)
 				std::cout << _inputDate << " => " << _inputValue << " = " << it->second * _inputValue << std::endl;

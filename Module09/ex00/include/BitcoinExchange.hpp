@@ -25,7 +25,7 @@ class BitcoinExchange {
 		float	_valueofbtc;
 		std::map<std::string, float> _tab;
 
-		std::vector<std::pair<std::string, float> > _inputTab;
+		std::map<std::string, float> _inputTab;
 		std::string _inputDate;
 		float _inputValue;
 };
