@@ -7,12 +7,13 @@ RPN::RPN()
 
 RPN::RPN(const RPN& other)
 {
-    (void)other;
+    _stack = other._stack;
 }
 
 RPN& RPN::operator=(const RPN& other)
 {
-     (void)other;
+     if (this != &other)
+        _stack = other._stack;
      return (*this);
 }
 
@@ -55,8 +56,13 @@ void RPN::parseString(std::string input)
             else
                 _stack.push(input[i] - '0');
         }
-        else if (input[i] == '+' || input[i] == '-' || input[i] == '/' || input[i] == '*')
+        else if ((input[i] == '+' || input[i] == '-' || input[i] == '/' || input[i] == '*') && input[i - 1] == ' ')
         {
+            if (i == 0 || (!isspace(input[i - 1]) && !isdigit(input[i - 1])) || (i + 1 < input.size() && !isspace(input[i + 1]) && !isdigit(input[i + 1])))
+            {
+                std::cerr << "Error: invalid operator spacing !" << std::endl;
+                return;
+            }
             char sign = input[i];
             if (_stack.size() > 1)
             {
@@ -84,10 +90,15 @@ void RPN::parseString(std::string input)
     if (_stack.size() == 1)
     {    
         std::cout << _stack.top() << std::endl;
+        //debug
+        // std::cout << "La taille est : " << _stack.size() << std::endl;
         return ;
     }
-    // std::cout << _stack.size() << std::endl;
+    else
+    {
+        std::cout << "Error: the operation is not finished" << std::endl;
+        //debug
+        // std::cout << "La taille est : " << _stack.size() << std::endl;
+        return ;
+    }
 }
-
-// faire un deuxieme conteneurs pour les operateurs
-// a chaque croisement d'operateur, faire le calcul sur les deux dermiers nombre empile

@@ -11,12 +11,6 @@ int main(int ac, char **av)
 
     rpn.parseString(av[1]);
 
-    // std::stack<int> st;
-
-    // st.push(10);
-
-    // std::cout << st.top() << std::endl;
-
     return (0);
 
 }
