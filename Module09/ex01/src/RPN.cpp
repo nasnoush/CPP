@@ -46,6 +46,11 @@ void RPN::parseString(std::string input)
     {
         if (input[i] == ' ')
             continue;
+        // if (i == 0 && (input[i] == '+' || input[i] == '-' || input[i] == '/' || input[i] == '*'))
+        // {
+        //     std::cerr << "Error: operator at the begin and before numbers !" << std::endl;
+        //     return;
+        // }
         if (isdigit(input[i]))
         {
             if (i + 1 < input.size() && isdigit(input[i + 1]))
@@ -102,3 +107,6 @@ void RPN::parseString(std::string input)
         return ;
     }
 }
+
+
+// segfault si j utilise un signe au debut, check la condition d acces je depasse surement 
