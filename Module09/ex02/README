@@ -1,6 +1,7 @@
 Ford Johnson
 
-- Regrouper les nombres en pair. Si le nombre d'element est impair laisser le dernier elements de cote
-- Trier chaques paires du lus petit au plus grand
+Étape 1: Divisez les touches en ⌈n / 2⌉ paires, en laissant une clé de côté si n est impair. Appelez la clé plus grande de la i ‐ème paire ai et la plus petite bi.
 
-- Trier les pairs de pairs
+Étape 2: Triez le ⌈n / 2⌉ a avec l'algorithme de Ford-Johnson de manière récursive. Gardez la correspondance de la paire – si l’ai est renommé aj, re-index bi comme bj.
+
+Étape 3: Nous avons maintenant un ordre partiel connu capturé essentiellement par les inégalités
