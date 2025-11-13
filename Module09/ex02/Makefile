@@ -3,7 +3,6 @@ CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
 SRCS =  src/main.cpp \
-		src/RPN.cpp \
 
 OBJ = $(SRCS:.cpp=.o)
 
