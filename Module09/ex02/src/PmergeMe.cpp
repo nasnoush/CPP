@@ -5,14 +5,26 @@ PmergeMe::PmergeMe()
 
 }
 
-PmergeMe::PmergeMe(const PmergeMe& other)
+// PmergeMe::PmergeMe(const PmergeMe& other)
+// {
+
+// }
+
+// PmergeMe& PmergeMe::operator=(const PmergeMe& other)
+// {
+
+// }
+
+bool PmergeMe::isNumber(std::string input)
 {
-
-}
-
-PmergeMe& PmergeMe::operator=(const PmergeMe& other)
-{
-
+	if (input.empty())
+		return false;
+	for (unsigned int i = 0; i < input.length(); ++i)
+	{
+		if (!isdigit(input[i]))
+			return false;
+	}
+	return true;
 }
 
 PmergeMe::~PmergeMe()
@@ -20,14 +32,4 @@ PmergeMe::~PmergeMe()
 
 }
 
-void PmergeMe::makePairs(int tab)
-{
-	if (tab.size() % 2 == 0)
-	{
-		
-	}
-	else
-	{
 
-	}
-}

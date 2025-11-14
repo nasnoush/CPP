@@ -13,6 +13,9 @@ class PmergeMe {
 		PmergeMe& operator=(const PmergeMe& other);
 		~PmergeMe();
 
+
+		bool isNumber(std::string input);
+
 		void vectSort();
 		void dequSort();
 
