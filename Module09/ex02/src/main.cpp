@@ -5,19 +5,40 @@ int main(int ac, char **av)
 	(void)ac;
 
 	PmergeMe p;
-
-	for (int i = 1; i < ac; i++)
+	
+	try
 	{
-		if (p.isNumber(av[i]) == false)
+		if (ac > 2)
 		{
-			std::cout << av[i] << " pas bon" << std::endl;
+			p.parseInput(ac, av);
+
+			std::cout << "Before: ";
+			for (unsigned int i = 0; i < p.getTabVect().size(); i++)
+			std::cout << p.getTabVect()[i] << " ";
+
+			// p.vectSort();
+			// std::cout << std::endl << "After: ";
+			// for (unsigned int i = 0; i < p.getTabVect().size(); i++)
+			// std::cout << p.getTabVect()[i] << " ";
+
+			p.vectSort();
 		}
 		else
-			std::cout << av[i] << " c bon" << std::endl;
+		{
+			throw "./PmergeMe [1 2 3 4 5 6]";
+		}
 	}
-	std::cout << std::endl;
-	std::cout << "nb arg : " << ac - 1 << std::endl;
+	catch(const char *msgError)
+	{
+		std::cerr << "Error: " << msgError << '\n';
+	}
+	
+	// for (unsigned int i = 0; i < p.getTabVect().size(); i++)
+	// 	std::cout << p.getTabVect()[i] << std::endl;
+	
 
 
 	return 0;
 }
+
+// tout metre dans un try catch et throw tout ou std::cerr
