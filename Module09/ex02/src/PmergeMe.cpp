@@ -121,6 +121,11 @@ int PmergeMe::binaryInsertion(int &value, std::vector<int> &vTab)
 	return left;
 }
 
+std::vector<int> PmergeMe::orderJacobsthal()
+{
+	
+}
+
 
 void PmergeMe::vectSort()
 {
@@ -170,9 +175,13 @@ void PmergeMe::vectSort()
 	std::sort(lead.begin(), lead.end());
 
 	int pos = binaryInsertion(insert[0], lead);
-	lead.insert(lead.begin() + pos, insert[0]);
+	for (unsigned int t = 0; t < insert.size(); t++)
+		lead.insert(lead.begin() + pos, insert[t]);
+	if (impair != 0)
+		lead.insert(lead.begin() + pos, impair);
 
-	std::cout << std::endl << "Lead trie ";
+
+	std::cout << std::endl << "Lead trie: ";
 	for (unsigned int i = 0; i < lead.size(); i++)
 		std::cout << lead[i] << " ";
 	// DEBUG
@@ -191,3 +200,4 @@ PmergeMe::~PmergeMe()
 
 
 // si une erreur vient de parse input ou is number, quitter tout avec exit
+// refaire moi meme le std::sort

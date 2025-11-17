@@ -29,6 +29,7 @@ class PmergeMe {
 		bool vectIsSorted(std::vector<int> vTab);
 
 		int binaryInsertion(int &value, std::vector<int> &vTab);
+		std::vector<int> orderJacobsthal();
 
 
 

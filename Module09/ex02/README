@@ -5,3 +5,33 @@ Ford Johnson
 Étape 2: Triez le ⌈n / 2⌉ a avec l'algorithme de Ford-Johnson de manière récursive. Gardez la correspondance de la paire – si l’ai est renommé aj, re-index bi comme bj.
 
 Étape 3: Nous avons maintenant un ordre partiel connu capturé essentiellement par les inégalités
+
+
+Génère l’ordre Jacobsthal :
+
+commence par 0
+
+à chaque frontière J :
+
+ajoute les indices entre l’ancienne frontière et J, en partant du dernier index vers le premier
+
+Ensuite tu insères dans lead selon cet ordre.
+
+
+-----
+
+
+
+Prends la taille de insert
+
+Génère les Jacobsthal jusqu’à cette taille
+
+Commence order avec [0]
+
+Pour chaque frontière Jacobsthal :
+
+liste les indices entre la frontière précédente et la nouvelle
+
+ajoute-les en ordre inverse à order
+
+Retourne order
