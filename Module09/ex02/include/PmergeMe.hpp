@@ -23,27 +23,27 @@ class PmergeMe {
 		std::vector<int> getTabVect();
 
 
-		bool isNumber(std::string input);
+		bool isNumber(std::string &input);
 		void parseInput(int ac, char **av);
 		void sort2Nbr(int &a, int &b);
 
 		// Pour vector
 		void vectSort();
 
-		bool vectIsSorted(std::vector<int> vTab);
+		bool vectIsSorted(std::vector<int> &vTab);
 
 		int binaryInsertion(int &value, std::vector<int> &vTab);
 		unsigned int Jacobsthal(unsigned int n);
-		std::vector<int> orderJacobsthal(std::vector<int> insertTab);
+		std::vector<int> orderJacobsthal(std::vector<int> &insertTab);
 
 		// Pour deque
 		void dequSort();
 
-		bool dequeIsSorted(std::deque<int> vTab); 
+		bool dequeIsSorted(std::deque<int> &vTab); 
 
 		int binaryInsertionD(int &value, std::deque<int> &dTab);  // le D a la pour differencier
 		unsigned int JacobsthalD(unsigned int n); // le D a la pour differencier
-		std::deque<int> orderJacobsthal(std::deque<int> insertTab);
+		std::deque<int> orderJacobsthal(std::deque<int> &insertTab);
 
 
 

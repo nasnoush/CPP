@@ -1,8 +1,5 @@
 #include "../include/PmergeMe.hpp"
 
-int start;
-int stop;
-
 PmergeMe::PmergeMe()
 {
 
@@ -34,7 +31,7 @@ std::vector<int> PmergeMe::getTabVect()
 	return _tabVect;
 }
 
-bool PmergeMe::isNumber(std::string input)
+bool PmergeMe::isNumber(std::string &input)
 {
 
 	std::string max = "2147483647";
@@ -63,8 +60,6 @@ bool PmergeMe::isNumber(std::string input)
 
 void PmergeMe::parseInput(int ac, char **av)
 {
-	start = clock();
-
 	for (int i = 1; i < ac; i++)
 	{
 		std::string arg = av[i];
@@ -110,7 +105,7 @@ void PmergeMe::sort2Nbr(int &a, int &b)
 
 // Vector
 
-bool PmergeMe::vectIsSorted(std::vector<int> vTab)
+bool PmergeMe::vectIsSorted(std::vector<int> &vTab)
 {
 	for (unsigned int i = 0; i < vTab.size() - 1; i++)
 	{
@@ -148,7 +143,7 @@ unsigned int PmergeMe::Jacobsthal(unsigned int n)
 	return (Jacobsthal(n - 1) + 2 * Jacobsthal(n -2));
 }
 
-std::vector<int> PmergeMe::orderJacobsthal(std::vector<int> insertTab)
+std::vector<int> PmergeMe::orderJacobsthal(std::vector<int> &insertTab)
 {
 	std::vector<int> jacVect;
 	unsigned int n = 0;
@@ -174,10 +169,11 @@ std::vector<int> PmergeMe::orderJacobsthal(std::vector<int> insertTab)
 void PmergeMe::vectSort()
 {
 	// mettre le calcul du temops surement
-
+	int start = clock();
 	std::vector<int> lead; // element les + grands
 	std::vector<int> insert; // les + petits que je vais inserer apres
 	int impair = 0;
+	bool oldnbr = false;
 
 	if (_tabVect.size() < 2)
 	{
@@ -187,7 +183,10 @@ void PmergeMe::vectSort()
 	else
 	{
 		if (_tabVect.size() % 2 != 0)
+		{	
 			impair = _tabVect.back();
+			oldnbr = true;
+		}
 		for (unsigned int i = 0; i < _tabVect.size() - 1; i = i + 2)
 		{
 			if (_tabVect[i] > _tabVect[i + 1])
@@ -227,7 +226,7 @@ void PmergeMe::vectSort()
 		int pos = binaryInsertion(val, lead);
 		lead.insert(lead.begin() + pos, val);
 	}
-	if (impair != 0)
+	if (oldnbr)
 	{	
 		int pos = binaryInsertion(impair, lead);
 		lead.insert(lead.begin() + pos, impair);
@@ -263,7 +262,7 @@ void PmergeMe::vectSort()
 		std::cout << _tabVect[i] << " ";
 
 
-	stop = clock() - start;
+	int stop = clock() - start;
 	std::cout << std::endl << "Time to process a range of  " << _tabVect.size() << " elements with std::vector<int> : " <<(double)stop / 1000 << std::endl;
 
 
@@ -271,7 +270,7 @@ void PmergeMe::vectSort()
 
 // DEQUE
 
-bool PmergeMe::dequeIsSorted(std::deque<int> vTab)
+bool PmergeMe::dequeIsSorted(std::deque<int> &vTab)
 {
 	for (unsigned int i = 0; i < vTab.size() - 1; i++)
 	{
@@ -309,7 +308,7 @@ unsigned int PmergeMe::JacobsthalD(unsigned int n)
 	return (Jacobsthal(n - 1) + 2 * Jacobsthal(n -2));
 }
 
-std::deque<int> PmergeMe::orderJacobsthal(std::deque<int> insertTab)
+std::deque<int> PmergeMe::orderJacobsthal(std::deque<int> &insertTab)
 {
 	std::deque<int> jacDeque;
 	unsigned int n = 0;
@@ -334,10 +333,11 @@ std::deque<int> PmergeMe::orderJacobsthal(std::deque<int> insertTab)
 void PmergeMe::dequSort()
 {
 	// mettre le calcul du temops surement
-
+	int start = clock();
 	std::deque<int> lead; // element les + grands
 	std::deque<int> insert; // les + petits que je vais inserer apres
 	int impair = 0;
+	bool oldnbr = false;
 
 	if (_tabDeque.size() < 2)
 	{
@@ -347,7 +347,10 @@ void PmergeMe::dequSort()
 	else
 	{
 		if (_tabDeque.size() % 2 != 0)
+		{	
 			impair = _tabDeque.back();
+			oldnbr = true;
+		}
 		for (unsigned int i = 0; i < _tabDeque.size() - 1; i = i + 2)
 		{
 			if (_tabDeque[i] > _tabDeque[i + 1])
@@ -386,7 +389,7 @@ void PmergeMe::dequSort()
 		int pos = binaryInsertionD(val, lead);
 		lead.insert(lead.begin() + pos, val);
 	}
-	if (impair != 0)
+	if (oldnbr)
 	{	
 		int pos = binaryInsertionD(impair, lead);
 		lead.insert(lead.begin() + pos, impair);
@@ -420,7 +423,7 @@ void PmergeMe::dequSort()
 	// for (unsigned int i = 0; i < _tabDeque.size(); i++)
 	// 	std::cout << _tabDeque[i] << " ";
 
-	stop = clock() - start;
+	int stop = clock() - start;
 	std::cout << "Time to process a range of  " << _tabDeque.size() << " elements with std::deque<int> : " <<(double)stop / 1000 << std::endl;
 
 }
@@ -431,3 +434,6 @@ PmergeMe::~PmergeMe()
 {
 
 }
+
+
+// gerer l'insertion a l'envers, opti la fonction Jaob pour etre moins couteux et faire des tests
