@@ -12,16 +12,12 @@ int main(int ac, char **av)
 		{
 			p.parseInput(ac, av);
 
-			std::cout << "Before: ";
-			for (unsigned int i = 0; i < p.getTabVect().size(); i++)
-			std::cout << p.getTabVect()[i] << " ";
-
-			// p.vectSort();
-			// std::cout << std::endl << "After: ";
+			// std::cout << "Before: ";
 			// for (unsigned int i = 0; i < p.getTabVect().size(); i++)
 			// std::cout << p.getTabVect()[i] << " ";
 
 			p.vectSort();
+			p.dequSort();
 		}
 		else
 		{
@@ -41,4 +37,7 @@ int main(int ac, char **av)
 	return 0;
 }
 
+
+
 // tout metre dans un try catch et throw tout ou std::cerr
+
