@@ -11,11 +11,6 @@ int main(int ac, char **av)
 		if (ac > 2)
 		{
 			p.parseInput(ac, av);
-
-			// std::cout << "Before: ";
-			// for (unsigned int i = 0; i < p.getTabVect().size(); i++)
-			// std::cout << p.getTabVect()[i] << " ";
-
 			p.vectSort();
 			p.dequSort();
 		}

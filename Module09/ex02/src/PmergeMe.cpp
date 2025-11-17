@@ -88,7 +88,7 @@ void PmergeMe::parseInput(int ac, char **av)
 		_tabDeque.push_back(static_cast<int>(value));
 		_tabVect.push_back(static_cast<int>(value));
 	}
-	std::cout << "Before vect: ";
+	std::cout << "Before: ";
 	for (unsigned int i = 0; i < _tabVect.size(); i++)
 		std::cout << _tabVect[i] << " ";
 
