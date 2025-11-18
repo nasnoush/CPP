@@ -86,10 +86,6 @@ void PmergeMe::parseInput(int ac, char **av)
 	std::cout << "Before: ";
 	for (unsigned int i = 0; i < _tabVect.size(); i++)
 		std::cout << _tabVect[i] << " ";
-
-	// std::cout << "Before deque: ";
-	// for (unsigned int i = 0; i < _tabDeque.size(); i++)
-	// 	std::cout << _tabDeque[i] << " ";
 }
 
 void PmergeMe::sort2Nbr(int &a, int &b)
@@ -155,7 +151,6 @@ std::vector<int> PmergeMe::orderJacobsthal(std::vector<int> &insertTab)
 			jacVect.push_back(Jacobsthal(n));
 		n++;
 	}
-
 	for (unsigned int i = 0; i < insertTab.size(); i++)
 	{
 		std::vector<int>::iterator it = std::find(jacVect.begin(), jacVect.end(), i);
@@ -169,8 +164,8 @@ std::vector<int> PmergeMe::orderJacobsthal(std::vector<int> &insertTab)
 void PmergeMe::vectSort()
 {
 	int start = clock();
-	std::vector<int> lead; // element les + grands
-	std::vector<int> insert; // les + petits que je vais inserer apres
+	std::vector<int> lead;
+	std::vector<int> insert;
 	int impair = 0;
 	bool oldnbr = false;
 
@@ -214,7 +209,7 @@ void PmergeMe::vectSort()
 	// std::cout << impair << " ";
 	// DEBUG
 
-	// Trie de lead et insertion pas zappe de mettre les fonctions ici
+	/* Trie de lead et insertion */
 	std::sort(lead.begin(), lead.end());
 
 	std::vector<int> jacobVect = orderJacobsthal(insert);
@@ -231,8 +226,7 @@ void PmergeMe::vectSort()
 		lead.insert(lead.begin() + pos, impair);
 	}
 
-
-	// suppression de tout les elemnts du tab de base et j'ajoute tout ceux de lead si c'est trie dans le vect de base
+	/* supp tab de base et ajout de lead dans tab de base */
 	if (vectIsSorted(lead))
 	{
 		_tabVect.erase(_tabVect.begin(), _tabVect.end());
@@ -260,11 +254,8 @@ void PmergeMe::vectSort()
 	for (unsigned int i = 0; i < _tabVect.size(); i++)
 		std::cout << _tabVect[i] << " ";
 
-
 	int stop = clock() - start;
 	std::cout << std::endl << "Time to process a range of  " << _tabVect.size() << " elements with std::vector<int> : " <<(double)stop / 1000 << " ms" << std::endl;
-
-
 }
 
 // DEQUE
@@ -332,8 +323,8 @@ std::deque<int> PmergeMe::orderJacobsthalD(std::deque<int> &insertTab)
 void PmergeMe::dequSort()
 {
 	int start = clock();
-	std::deque<int> lead; // element les + grands
-	std::deque<int> insert; // les + petits que je vais inserer apres
+	std::deque<int> lead;
+	std::deque<int> insert;
 	int impair = 0;
 	bool oldnbr = false;
 
@@ -376,7 +367,7 @@ void PmergeMe::dequSort()
 	// std::cout << impair << " ";
 	// DEBUG
 
-	// Trie de lead et insertion pas zappe de mettre les fonctions ici
+	/* Trie de lead et insertion */
 	std::sort(lead.begin(), lead.end());
 
 	std::deque<int> jacobDeque = orderJacobsthalD(insert);
@@ -393,7 +384,7 @@ void PmergeMe::dequSort()
 		lead.insert(lead.begin() + pos, impair);
 	}
 
-	// suppression de tout les elemnts du tab de base et j'ajoute tout ceux de lead si c'est trie dans le vect de base
+	/* supp tab de base et ajout de lead dans tab de base */
 	if (dequeIsSorted(lead))
 	{
 		_tabDeque.erase(_tabDeque.begin(), _tabDeque.end());
@@ -426,14 +417,7 @@ void PmergeMe::dequSort()
 
 }
 
-
-
 PmergeMe::~PmergeMe()
 {
 
 }
-
-
-// gerer l'insertion a l'envers, opti la fonction Jaob pour etre moins couteux et faire des tests
-// opti jacpobsthal
-// peut etre tout mettre en template ?
