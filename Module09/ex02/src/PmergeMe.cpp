@@ -168,7 +168,6 @@ std::vector<int> PmergeMe::orderJacobsthal(std::vector<int> &insertTab)
 
 void PmergeMe::vectSort()
 {
-	// mettre le calcul du temops surement
 	int start = clock();
 	std::vector<int> lead; // element les + grands
 	std::vector<int> insert; // les + petits que je vais inserer apres
@@ -263,7 +262,7 @@ void PmergeMe::vectSort()
 
 
 	int stop = clock() - start;
-	std::cout << std::endl << "Time to process a range of  " << _tabVect.size() << " elements with std::vector<int> : " <<(double)stop / 1000 << std::endl;
+	std::cout << std::endl << "Time to process a range of  " << _tabVect.size() << " elements with std::vector<int> : " <<(double)stop / 1000 << " ms" << std::endl;
 
 
 }
@@ -332,7 +331,6 @@ std::deque<int> PmergeMe::orderJacobsthalD(std::deque<int> &insertTab)
 
 void PmergeMe::dequSort()
 {
-	// mettre le calcul du temops surement
 	int start = clock();
 	std::deque<int> lead; // element les + grands
 	std::deque<int> insert; // les + petits que je vais inserer apres
@@ -424,7 +422,7 @@ void PmergeMe::dequSort()
 	// 	std::cout << _tabDeque[i] << " ";
 
 	int stop = clock() - start;
-	std::cout << "Time to process a range of  " << _tabDeque.size() << " elements with std::deque<int> : " <<(double)stop / 1000 << std::endl;
+	std::cout << "Time to process a range of  " << _tabDeque.size() << " elements with std::deque<int> : " <<(double)stop / 1000 << " ms" << std::endl;
 
 }
 
