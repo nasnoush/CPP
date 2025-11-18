@@ -219,7 +219,7 @@ void PmergeMe::vectSort()
 	std::sort(lead.begin(), lead.end());
 
 	std::vector<int> jacobVect = orderJacobsthal(insert);
-	for (unsigned int i = 0; i < jacobVect.size(); i++)
+	for (int i = jacobVect.size() - 1; i >= 0; i--)
 	{
 		int idx = jacobVect[i];
 		int val = insert[idx];
@@ -305,19 +305,19 @@ unsigned int PmergeMe::JacobsthalD(unsigned int n)
 	if (n == 1)
 		return 1;
 
-	return (Jacobsthal(n - 1) + 2 * Jacobsthal(n -2));
+	return (JacobsthalD(n - 1) + 2 * JacobsthalD(n -2));
 }
 
-std::deque<int> PmergeMe::orderJacobsthal(std::deque<int> &insertTab)
+std::deque<int> PmergeMe::orderJacobsthalD(std::deque<int> &insertTab)
 {
 	std::deque<int> jacDeque;
 	unsigned int n = 0;
 
-	while (Jacobsthal(n) <= insertTab.size() - 1)
+	while (JacobsthalD(n) <= insertTab.size() - 1)
 	{
-		std::deque<int>::iterator pos = std::find(jacDeque.begin(), jacDeque.end(), Jacobsthal(n));
+		std::deque<int>::iterator pos = std::find(jacDeque.begin(), jacDeque.end(), JacobsthalD(n));
 		if (pos == jacDeque.end())
-			jacDeque.push_back(Jacobsthal(n));
+			jacDeque.push_back(JacobsthalD(n));
 		n++;
 	}
 
@@ -381,8 +381,8 @@ void PmergeMe::dequSort()
 	// Trie de lead et insertion pas zappe de mettre les fonctions ici
 	std::sort(lead.begin(), lead.end());
 
-	std::deque<int> jacobDeque = orderJacobsthal(insert);
-	for (unsigned int i = 0; i < jacobDeque.size(); i++)
+	std::deque<int> jacobDeque = orderJacobsthalD(insert);
+	for (int i = jacobDeque.size() - 1; i >= 0; i--)
 	{
 		int idx = jacobDeque[i];
 		int val = insert[idx];
@@ -437,3 +437,5 @@ PmergeMe::~PmergeMe()
 
 
 // gerer l'insertion a l'envers, opti la fonction Jaob pour etre moins couteux et faire des tests
+// opti jacpobsthal
+// peut etre tout mettre en template ?

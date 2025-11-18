@@ -43,7 +43,7 @@ class PmergeMe {
 
 		int binaryInsertionD(int &value, std::deque<int> &dTab);  // le D a la pour differencier
 		unsigned int JacobsthalD(unsigned int n); // le D a la pour differencier
-		std::deque<int> orderJacobsthal(std::deque<int> &insertTab);
+		std::deque<int> orderJacobsthalD(std::deque<int> &insertTab);
 
 
 
